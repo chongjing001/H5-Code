@@ -1,0 +1,45 @@
+<!--
+	1.定位属性
+	left - 左间距
+	right - 右间距
+	top - 上间距
+	bottom - 下间距
+	
+	2.设置参考属性
+	position - 设置标签定位的时候的参考对象（相对谁去定位）
+	initial （默认值）/static - 没有定位
+	absolute - 相对于第一个非initial /static的父标签定位
+	relative - 相对当前标签在标准流中的位置进行定位
+	  （一般把一个标签position设置为relative是为了让当前标签的子标签可以相对自己定位）
+	fixed - 相对于浏览器定位
+	sticky - 当网页中的内容超过一屏（需要滚动），相对于浏览器定位
+	            当网页中的内容不超过一屏（不需要滚动），相对于标准流定位
+	
+	
+	注意：定位也会让标签脱标（脱流）
+	- 最后标签都是按脱硫的方式进行布局：一行显示多个，设置宽高有效，默认大小为内容大小
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				position:relative ;
+				left: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1" style="width: 100px; height: 100px; background-color: khaki;">
+			
+		</div>
+		<span style="width: 100px; height: 100px; background-color: darkolivegreen; position: fixed; right: 200px; top: 50px;">雷达定位</span>
+		<div id="" style=" height: 2000px; background-color: navajowhite;">
+		</div>
+		
+		<div id="" style="width: 100%; height: 50px ; background-color: darkblue; position: sticky; bottom: 0px;"></div>
+	</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+//			score = parseInt(window.prompt('请输入成绩'))
+//			
+//			if (score <= 100){
+//				
+//				if (score <= 100 && score >= 90){
+//					document.write('A')
+//			}
+//				else if(score >= 80){
+//					document.write('B')
+//			}
+//				else if(score >= 70){
+//					document.write('C')
+//			}
+//				else if(score >= 60){
+//					document.write('D')
+//			}
+//				else{
+//					document.write('不及格')
+//			}
+//				
+//			}
+//			else{
+//				
+//				document.write('输入的分数不符合标准')
+//			}
+			
+			
+			
+			
+//			function factorial(){
+//				n = parseInt(window.prompt('求数字n的阶乘'))
+//				result = 1
+//				i = 1
+//				while(i<=n){
+//					result *= i
+//					i++
+//				}
+//				
+//				
+//				document.write(result)
+//			}
+//			
+//			factorial()
+			
+			
+			
+			n = parseInt(window.prompt('求数字n的阶乘 的和'))
+			
+			for (result=1,sum=0,i=1;i<=n;i++) {
+				
+				result *= i
+			sum += result
+			}
+			document.write(sum)
+			
+			
+			n = parseInt(window.prompt('求数字n所在的斐波拉契数列的值'))
+			
+			
+			n1 = 1
+			n2 = 1
+			result = 0
+			if (n<=2) {
+				document.write(1)
+				
+			}
+			else{
+				for (i=2;i<n;i++) {
+					result = n1 + n2
+					n1 = n2
+					n2 = result
+					
+				}
+				document.write(result)
+			}
+			
+			
+		//var str = "js实现用{two}自符串替换占位符{two} {three}  {one} ".format({one: "I",two: "LOVE",three: "YOU"});
+		//var str2 = "js实现用{1}自符串替换占位符{1} {2}  {0} ".format("I","LOVE","YOU");
+		String.prototype.format = function() {
+		 if(arguments.length == 0) return this;
+		 var param = arguments[0];
+		 var s = this;
+		 if(typeof(param) == 'object') {
+		  for(var key in param)
+		   s = s.replace(new RegExp("\\{" + key + "\\}", "g"), param[key]);
+		  return s;
+		 } else {
+		  for(var i = 0; i < arguments.length; i++)
+		   s = s.replace(new RegExp("\\{" + i + "\\}", "g"), arguments[i]);
+		  return s;
+		 }
+		}
+
+
+			
+			
+			
+			for (i = 1;i <= 9;i++) {
+				for (j = 1;j <= i;j++) {
+					console.log('{0}*{1}={2}'.format(j,i,j*i))
+					
+				}
+				console.log()
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

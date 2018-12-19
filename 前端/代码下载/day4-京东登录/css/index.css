@@ -1,0 +1,302 @@
+
+/*================通用===================*/
+*{
+	/*取消所有自带的间距*/
+	margin: 0;
+	padding: 0;
+	/*所有的标签的子标签默认相对自己定位*/
+	position: relative;
+}
+a{
+	/*取消所有a标签的下划线*/
+	text-decoration: none;
+}
+
+/*==============1.网页顶部==============*/
+#header{
+	height: 120px;
+	/*background-color: skyblue;*/
+}
+
+/*====顶部的顶部=====*/
+#header #top{
+	height: 80px;
+}
+/*图片*/
+#header #top #div1{
+	/*定位*/
+	position: absolute;
+	left: 186px;
+	
+	/*垂直居中
+	 * 当前标签高度是60px
+	 */
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+}
+/*调查文件*/
+#header #top #a1{
+	/*定位*/
+	position: absolute;
+	right: 190px;
+	bottom: 10px;
+	
+	/*文字效果*/
+	font-size: 12px;
+	color: rgb(150,150,150);
+	
+	/*背景图
+	 * background:图片地址 是否平铺 x坐标 y坐标 背景颜色
+	 */
+	padding-left: 23px;
+	background:url(../img/q-icon.png) no-repeat 0px center rgba(0,0,0,0);
+}
+#header #top #a1:hover{
+	color: red;
+	text-decoration: underline;
+}
+
+/*====顶部的底部====*/
+#header #bottom{
+	height: 40px;
+	background-color: rgb(255,246,236);
+	
+	/*水平方向居中*/
+	text-align: center;
+	/*文字垂直方向居中*/
+	line-height: 40px;
+	
+	
+}
+#header #bottom font{
+	/*文字整体右移*/
+	margin-left: 20px;
+	
+	/*文字大小和颜色*/
+	font-size: 13px;
+	color: rgb(150,150,150);
+}
+
+#header #bottom font a{
+	color: rgb(38,38,38);
+}
+#header #bottom font a:hover{
+	text-decoration: underline;
+}
+
+#header #bottom img{
+	/*图片垂直方向居中*/
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+}
+
+
+/*==============2.网页中间==============*/
+#content{
+	height: 470px;
+	/*背景图*/
+	background: url(../img/bg1.png) no-repeat 20% center rgb(196,25,25);
+}
+#content #login_div{
+	width: 350px;
+	height: 400px;
+	background-color: white;
+	
+	/*定位*/
+	position: absolute;
+	right: 188px;
+	top: 15px;
+
+}
+
+#content #login_div #div1{
+	height: 40px;
+	background-color: rgb(255,246,236);
+	
+	line-height: 40px;
+}
+#content #login_div #div1 p{
+	font-size: 12px;
+	color: rgb(150, 150, 150);
+	
+	text-align: center;
+}
+#content #login_div #div1 p img{
+	/*垂直居中*/
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+}
+
+
+#content #login_div #div2{
+	height: 55px;
+	/*background-color: yellow;*/
+	
+	/*调整竖线的颜色和大小*/
+	color: rgba(220,220,220,0.6);
+	font-weight: 100;
+	font-size: 20px;
+}
+#content #login_div #div2 button{
+	width: 169px;
+	height: 55px;
+	
+	border: 0;
+	
+	color: rgb(83,83,83);
+	font-size: 19px;
+	
+	font-weight: 500;
+	
+}
+/*focus - 成为焦点对应的状态*/
+#content #login_div #div2 button:focus{
+	/*去掉outline*/
+	outline: 0;
+	
+	color: rgb(215,36,50);
+}
+
+
+#content #login_div #div3{
+	height: 255px;
+	/*background-color: seagreen;*/
+	border-top: 1px solid rgba(220, 220, 220, 0.6);
+	border-bottom: 1px solid rgba(220, 220, 220, 0.6);
+}
+/*账号密码框*/
+#content #login_div #div3 #username, #content #login_div #div3 #password{
+	height: 40px;
+	
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	width: auto;
+	top: 30px;
+
+	/*background-color: sandybrown;*/
+	
+	border: 1px solid rgba(220,220,220,1);
+}
+#content #login_div #div3 #password{
+	top: 90px;
+}
+/*输入框中的图片*/
+#content #login_div #div3 img{
+	width: 40px;
+	height: 40px;
+	float: left;
+	border-right: 1px solid rgba(220,220,220,1);
+}
+/*输入框*/
+#content #login_div #div3 input{
+	border: 0;
+	height: 40px;
+	width: 250px;
+	float: left;
+	/*向右移动光标*/
+	padding-left: 10px;
+	font-size: 14px;
+	
+}
+#content #login_div #div3 input:focus{
+	outline: 0;
+}
+
+/*忘记密码*/
+#content #login_div #div3 a{
+	position: absolute;
+	right: 20px;
+	top: 150px;
+	font-size: 13px;
+	color: rgb(85,85,85);
+}
+#content #login_div #div3 a:hover{
+	text-decoration: underline;
+	color: red;
+}
+
+/*登录按钮*/
+#content #login_div #div3 button{
+	position: absolute;
+	bottom: 30px;
+	left: 20px;
+	width: 310px;
+	height: 35px;
+	
+	border: 0;
+	background-color: rgb(210,35,50);
+	
+	color: white;
+	font-size: 20px;
+}
+#content #login_div #div3 button:focus{
+	outline: 0;
+}
+#content #login_div #div3 button:active{
+	border: 2px solid deepskyblue;
+	/*outline: deepskyblue solid 2px;*/
+	/*设置圆角*/
+	border-radius: 3px;
+}
+
+/*第三方登录和注册*/
+#content #login_div #div4{
+	height: 50px;
+	line-height: 50px;
+	font-size: 13px;
+	
+	color: rgba(220,220,220,0.6);
+	/*font-weight: 100;*/
+}
+
+#content #login_div #div4 #a1{
+	margin-left: 20px;
+	margin-right: 15px;
+	
+	background: url(../img/qq.png) no-repeat 0px center rgba(0,0,0,0);
+	padding-left: 26px;
+	color: rgb(83,83,83);
+}
+#content #login_div #div4 #a2{
+	margin-left: 10px;
+	
+	background: url(../img/weixin.png) no-repeat 0px center rgba(0,0,0,0);
+	padding-left: 26px;
+	color: rgb(83,83,83);
+}
+#content #login_div #div4 #a3{
+	position: absolute;
+	right: 20px;
+	
+	background: url(../img/right.png) no-repeat 0px center rgba(0,0,0,0);
+	padding-left: 26px;
+	color: rgb(210,35,50);
+}
+
+#content #login_div #div4 #a1:hover{
+	text-decoration: underline;
+	color: rgb(210,35,50);
+}
+#content #login_div #div4 #a2:hover{
+	text-decoration: underline;
+	color: rgb(210,35,50);
+}
+#content #login_div #div4 #a3:hover{
+	text-decoration: underline;
+	color: rgb(210,35,50);
+}
+
+
+
+
+/*==============5.网页底部==============*/
+#footer{
+	height: 110px;
+	background-color: lightgreen;
+}
+
+

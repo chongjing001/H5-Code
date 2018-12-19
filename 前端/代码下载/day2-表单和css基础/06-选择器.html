@@ -1,0 +1,87 @@
+<!--
+	选择器{属性名1:属性值;属性名2:属性值;...}
+	
+	css提供的选择器的写法大概也有十几种，常见的：
+	1.标签选择器：直接将标签名作为选择器,选中当前html中所有指定的标签
+	             例如:a{} - 选中当前html中所有的a标签; div{} - 选中当前html中所有的div标签
+	2.id选择器：将标签的id属性值前面加#作为选择器，选中所有id是指定值的标签
+	            例如：#text{} - 选中当前html中id属性值是text的所有标签
+	            
+	3.class选择器(类型选择器):将标签的class属性值前面加.作为选择器,选中所有class是指定值的标签
+	             例如：.test{} - 选中当前html中class属性值是test的所有标签
+	             
+	4.群组选择器: 将多个选择器用逗号隔开作为一个选择器,同时选中每个单独的选择器选中的所有的标签
+				 例如：p,a,.test,#text{} - 选中所有p标签，a标签和class值是test以及id值是text的标签
+				 
+    5.后代选择器：将多个选择器用空格隔开作为一个选择器, 从前往后一层一层的找，找到最后一个选择器对应的标签
+    				 例如: div .test #text{} - 现在div标签中class值是test的标签中id值是text的标签
+    				      div div p{} - 选中div中的div中的p标签
+    	6.通配符：将*作为选择器, 选中当前页面中所有的标签
+    			 例如: *{} - 选中当前页面中所有的标签
+-->
+<!--style表实质可以写在html文件中的任何位置-->
+<style type="text/css">
+	/*1.标签选择器*/
+	div{
+		color: red;
+	}
+	/*2.id选择器*/
+	#text{
+		background-color: yellow;
+	}
+	
+	/*3.class选择器*/
+	.test{
+		width: 300px;
+		height: 200px;
+		background-color: skyblue;
+	}
+	
+	/*4.群组选择器*/
+	div,.test{
+		font-size: 50px;
+	}
+	/*5.后代选择器*/
+	div div div{
+		color: seagreen;
+	}
+	/*6.通配符*/
+	*{
+		/*设置文字的装饰效果
+		 * underline - 添加下划线
+		 * overline - 上划线
+		 * line-through - 删除线
+		 * none - 去掉下划线
+		 */
+		text-decoration: line-through;
+	}
+	
+</style>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="">
+			<div class="test">
+				div2
+			</div>
+			<div id="text">
+				div1
+				<div id="">
+					div0
+				</div>
+			</div>
+		</div>
+		<div class="test">
+			div3
+		</div>
+		<p id="text">我是段落</p>
+		<h1 class="test">我是标题1</h1>
+		
+		
+	</body>
+</html>

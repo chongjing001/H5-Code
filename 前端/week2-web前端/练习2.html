@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				border: 0;
+				position: relative;
+			}
+			#top{
+				height: 100px;
+				width: 500px;
+				background-color: lightpink;
+				text-align: center;
+			}
+			#top button{
+				height: 100px;
+				width: 100px;
+				background-color: #D2691E;
+				
+				/*margin-left: 100px;*/
+			}
+			#top button img{
+				height: 100px;
+				width: 100px;
+			}
+			#bottom{
+				height: 450px;
+				width: 414px;
+				background-color: #8AC007;
+				margin-left: 44px;
+			}
+			#bottom #photo{
+				height: 400px;
+				width: 414px;
+				background-color: aliceblue;
+			}
+			#bottom #imgname{
+				height: 50px;
+				background-color: greenyellow;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<button id="bon1" onclick="loadingPhoto()">
+				<img src="img/thumb-1.jpg"/>
+			</button>
+			<button id="bon2" onclick="loadingPhoto()">
+				<img src="img/thumb-2.jpg"/>
+			</button>
+			<button id="bon3" onclick="loadingPhoto()">
+				<img src="img/thumb-3.jpg"/>
+			</button>
+			<button id="bon4" onclick="loadingPhoto()">
+				<img src=""/>
+			</button>	
+		</div>
+		<div id="bottom">
+			<img id="photo" src="img/picture-1.jpg"/>
+			<font id="imgname"></font>
+		</div>
+		<script type="text/javascript">
+			function loadingPhoto(){
+				var addImg1 = document.getElementById('bon1')
+				var addImg2 = document.getElementById('bon2')
+				var addImg3 = document.getElementById('bon3')
+				var addImg4 = document.getElementById('bon4')
+			}
+		</script>
+	</body>
+</html>

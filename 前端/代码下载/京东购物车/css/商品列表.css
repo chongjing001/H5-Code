@@ -1,0 +1,77 @@
+
+/*===========中间=============*/
+#middle{
+	/*height: 500px;*/
+	/*background-color: hotpink;*/
+	/*text-align: center;*/
+}
+#goods{
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+#goods .header{
+	background-color: #E5E5E5;
+	height: 40px;
+}
+
+#goods .td1{
+	width: 50px;
+}
+#goods .td2{
+	width: 250px;
+}
+#goods .td3{
+	width: 100px;
+}
+#goods td{
+	padding-left: 10px;
+}
+/*商品行*/
+#goods .after{
+	/*background-color: yellow;*/
+	height: 110px;
+	/*line-height: 110px;*/
+}
+#goods .td_goods img{
+	width: 70px;
+	height: 100px;
+	vertical-align: middle;
+	float: left;
+} 
+#goods .td_goods p{
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+/*数量*/
+#goods .num button{
+	float: left;
+	width: 20px;
+	height: 24px;
+	border: none;
+}
+#goods .num input{
+	float: left;
+	width: 25px;
+	height: 20px;
+	text-align: center;
+	margin: 0 5px;
+}
+
+
+/*线行*/
+#goods .line{
+	height: 1px;
+	background-color: black;
+}
+
+
+
+
+#balance{
+	width: 70%;
+	margin: 0 auto;
+	height: 100px;
+	/*background-color: seagreen;*/
+}

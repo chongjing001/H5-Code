@@ -1,0 +1,57 @@
+<!--
+	1.什么是js
+	web标准中的行为标准，负责网页种变化的部分
+	
+	2.在哪儿写js代码
+	a.写在标签的事件相关属性，例如按钮的oncliced
+	b.写在scrip标签中（将js代码作为script标签的内容）
+	注意：script标签理论上可以放在html中的任何位置，
+	但是一般放在body或者head标签中
+	c.写在结束文件中，在html中通过script标签将文件导入（src属性值就是要导入的js文件路径）
+	
+	3.js能做什么
+	a.在网页的指定位置插入标签
+	b.修改内容
+	c.修改样式
+	
+	4.怎么写js代码
+	JavaScript是一门编程语言，hepython一样是动态语言也是脚本语言。但是和Java没有关系
+	
+	补充：
+	window.alert（信息） - 在浏览器上弹出一个对话框，对话框中显示制定的信息
+	
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/index.js">
+
+		</script>
+		<script type="text/javascript">
+			//在这儿写js代码
+			window.alert('阿斯蒂芬')
+		</script>
+	</head>
+	<body>
+		<button onclick="window.alert('你好')">点击</button>
+		
+		<script type="text/javascript">
+			arr = ['海贼王','火影','一人之下']
+			for (index in arr){
+				message = '<h1>' + arr[index]+'</h1>'
+				//在网页中添加内容
+				document.write(message)
+			}
+		</script>
+		<!--修改标签内容-->
+		<p id="p1">段落</p>
+		<!--修改标题内容-->
+		<button onclick="document.getElementById('p1').innerHTML='我是*****'">修改内容</button>
+		<!--修改标题样式-->
+		<button onclick="document.getElementById('p1').style='color:red;font-size:30px'">修改样式</button>
+		
+		<img id="im" src="img/bg1.png"/>
+	</body>
+</html>

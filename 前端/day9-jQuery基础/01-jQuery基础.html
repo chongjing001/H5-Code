@@ -1,0 +1,72 @@
+<!--
+	jQuery是JavaScript的第三方库
+	
+	2.jQuery代码
+	a.通过script标签导入jQuery文件
+	b.在jQuery中的内容都是封装到jQuery对象中的，jQuery对象可以用'$'代替
+	
+	
+	
+	
+	3.节点操作
+	window.onload - 当网页中的内容全部加载成功后触发的事件（如果有网络图片，会等图片加载成功）
+	
+	$(函数) - 
+	
+	
+	4.创建标签
+	$('HTML标签语法')，  
+	
+	5.添加标签
+	父标签.append(子标签) - 在父标签的最后添加子标签
+	父标签.prepend（子标签） - 在父标签的最前面添加子标签
+		before之前添加
+		after之后添加
+	6.删除标签
+	标签.empty() - 清空标签
+	标签.remove() - 删除指定的标签
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--导入jQuery文件-->
+		<script src="js/jquery.min.js">
+			//1.等待加载完成
+//			window.onload = function(){
+//				
+//			}
+			// 等待页面中所有的标签添加成功，就会触发
+//			$(document).ready(function(){
+//				console.log(document.getElementsByTagName('p')[0])
+//			})
+			//简写
+			
+			//获取节点操作（选择器）
+			
+			//$(选择器) - 选择器是在css中怎么写这儿就怎么写
+			//a.通过标签名获取节点 - 标签选择器
+			//$('标签选择器') - 选择网页中制定的标签，返回的是jQuery对象不是数组
+			//注意：如果选择器同时选中多个，返回值和
+			
+			$(function(){
+				$('div').css('color','red')
+				
+				
+			});
+			
+			
+			
+			
+		</script>
+		<!--实际开发时，通过cdn加速，去服务器直接导入jQuery-->
+		
+	</head>
+	<body>
+		
+		<div>11</div>
+		<div>22</div>
+		<div>33</div>
+	</body>
+</html>

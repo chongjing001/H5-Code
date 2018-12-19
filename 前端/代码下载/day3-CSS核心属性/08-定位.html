@@ -1,0 +1,94 @@
+<!--
+	1.定位属性
+	letf - 标签的左边到指定位置的距离（左间距）
+	right - 标签的右边到指定位置的距离（右间距）
+	top - 标签的顶部到指定位置的距离（上间距）
+	bottom - 标签的底部到指定位置的距离(下间距)
+	
+	2.position属性 - 设置标签定位的时候的参考对象(相对谁去定位)
+	initial/static(默认值) - 不相对任何对象定位
+	absolute(绝对定位) - 相对于第一个非initial/static的父标签进行定位
+	relative(相对定位) - 相对当前标签在标准流中的位置进行定位 
+	           (注意：一般把一个标签的position设置为relative是为了让当前标签的子标签可以相对自己定位)
+	fixed - 相对浏览器进行定位  
+	sticky - 当网页中的内容超过一屏(需要滚动),相对浏览器定位;
+	         当网页中的内容没有超过一屏(不需要滚动)，相对标准流的位置进行定位;(注意：一般只针对最后一个标签)
+	
+	
+	注意：定位也会让标签脱标(脱流) - 不管怎么脱，标签都是按脱流的方式进行布局(一行显示多个，设置宽高有效，默认大小是内容大小)
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*absolute*/
+			#div1{
+				position: absolute;
+				right: -30px;
+				
+			}
+			#div2{
+				position: relative;
+				/*隐藏子标签超出的部分*/
+				overflow: hidden;
+			}
+			
+			span{
+				position: absolute;
+				left: 10px;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<!--absolute-->
+		<div style="width: 500px; height: 400px; background-color: darkorchid;" id="div3">
+			<div style="width: 300px; height: 300px; background-color: yellowgreen;" id="div2">
+				<div id="div1" style="width: 100px; height: 100px; background-color: hotpink;">
+				</div>
+				<span style="height: 60px; background-color: chocolate;">
+					横说竖说横说竖说
+				</span>
+			</div>
+		</div>
+		
+		<!--relative-->
+		<style type="text/css">
+			#div5{
+				position: relative;
+				left: 100px;
+				top: 100px;
+			}
+		</style>
+		<div id="div4" style="width: 100px; height: 100px; background-color: sienna">
+		</div>
+		<div id="div5" style="width: 100px; height: 100px; background-color: sandybrown">
+		</div>
+		
+		
+		<!--3.fixed-->
+		<style type="text/css">
+			#div6{
+				position: fixed;
+				right: 0px;
+				bottom: 0px;
+			}
+		</style>
+		<div id="div6" style="width: 150px; height: 80px; background-color: skyblue">
+			<a href="">回到顶部</a>
+		</div>
+		
+		<!--4.sticky-->
+		<style type="text/css">
+			#div7{
+				position: sticky;
+				bottom: 0px;
+			}
+		</style>
+		<div id="div7" style="width: 100%; height: 60px; background-color: darkkhaki">
+			
+		</div>
+	</body>
+</html>

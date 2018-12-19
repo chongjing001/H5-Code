@@ -1,0 +1,61 @@
+<!--
+	html中所有在网页上可见的标签都是盒子模型，有固定的结构.
+	所有可见的标签都是由：content、padding、border和margin组成,其中内容、padding、border是可见的，margin不可见
+	1.content - a.设置width和height就是在设置content的大小;
+	            b.标签中添加内容也是添加到content中的
+	            c.设置背景颜色，会作用于content
+	2.padding - a.通过padding相关属性设置padding的大小(4个方向)
+	            b.设置背景颜色，会作用于padding
+	            
+	3.border(边框) - a.通过border相关属性设置border的大小(4个方向)
+			   b.边框的颜色需要单独设置
+			   
+	4.margin - a.通过margin相关属性设置margin的大小
+			   b.不可见，但是占位
+	            
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+			div{
+				/*1.设置content的大小*/
+				width: 100px;
+				height: 100px;
+				background-color: sandybrown;
+				
+				/*2.设置padding大小*/
+				/*a.同时给4个边添加padding*/
+				/*padding: 20px;*/ 
+				
+				/*b.分别给不同的边添加padding*/
+				padding-left: 20px;
+				padding-top: 30px;
+				
+				/*3.border*/
+				/*a.同时给4个边添加border
+				 * border: 宽度 样式 颜色
+				 * 样式 - solid(实线)/dashed(虚线)/dotted(点划线)/double(双线)
+				 */
+				/*border: 6px dashed slateblue;*/
+				
+				/*b.单独设不同边的边框*/
+				border-left: 3px solid darkblue;
+				border-top: 3px dashed yellowgreen;
+				
+				/*4.margin*/
+				/*margin: 100px;*/
+				margin-left: 50px;
+			}
+		</style>
+		<div id="">
+			<a href="">python</a>
+		</div>
+		
+		姓名:<input type="text" name="" id="" value="" style="padding-left: 20px;"/>
+	</body>
+</html>

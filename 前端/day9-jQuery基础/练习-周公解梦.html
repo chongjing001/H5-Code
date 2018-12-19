@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				border: 0;
+			}
+			#box1{
+				border-bottom: 1px solid #808080;
+				text-align: center;
+				margin-top: 200px;
+			}
+			#box1 input{
+				font-size: 40px;
+				outline: none;
+				text-align: center;
+				border-bottom: 1px dotted #909090;
+				margin-bottom: 10px;
+				
+				vertical-align: middle;
+			}
+			#box1 button{
+				width: 80px;
+				height: 40px;
+				color: white;
+				background-color: red;
+				font-size: 20px;
+			}
+			#box2{
+				text-align: center;
+				font-size: 18px;
+				width: 400px;
+				margin-left: 500px;
+				
+			}
+			.result{
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id='box1'>
+			<input type="text" name="" id="" value="" placeholder="请输入关键字"/>
+			<button id="btn1">解梦</button>
+			<button id="btn2">清除</button>
+		</div>
+		<div id='box2'></div>
+	</body>
+</html>
+<script type="text/javascript">
+	$('#box1 #btn1').on('click',function(){
+		var keyword = $('#box1 input').val()
+		console.log(keyword)
+		
+		var url = 'http://api.tianapi.com/txapi/dream/'
+		$.get(url,{'key':'772a81a51ae5c780251b1f98ea431b84','word':keyword},function(re){
+	 	
+	 	
+	 	
+	 	if(re.msg =="未检索到相关信息"){
+	 		window.alert("您输入的内容无解")
+	 		return
+	 	}
+	 	
+	 	var answer = (re.newslist)[0].result
+	 	
+	 	//1
+//	 	var fontNode = $('<font class="result1"></font>').text(answer)
+//	 	$('#box2').append(fontNode)
+	 	//2
+	 	$('#box2').text(answer)
+	 	
+		})
+	})
+	
+	$('#box1 #btn2').on('click',function(){
+//		$('#box2 font').remove()
+		
+		//2
+		$('#box2').text("")
+	})
+	
+	
+	
+	
+	
+</script>

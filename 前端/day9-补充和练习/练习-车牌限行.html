@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				border: 0;
+				
+			}
+			#box1{
+				border-bottom: 1px solid #808080;
+				text-align: center;
+				margin-top: 200px;
+			}
+			#box1 input{
+				font-size: 40px;
+				outline: none;
+				text-align: center;
+				border-bottom: 1px dotted #909090;
+				margin-bottom: 10px;
+				
+				/*vertical-align: middle;*/
+			}
+			#box1 button{
+				color: white;
+				background-color: red;
+				font-size: 30px;
+				
+			}
+			#box2{
+				font-size: 35px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<input type="text" placeholder="请输入车牌号"/>
+			<button id="btn1">查询</button>
+			<button id="btn2">清除</button>
+		</div>
+		<div id="box2">
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	//获取需要的节点
+	var carNumNode = document.getElementsByTagName('input')[0]
+	var queryNode = document.getElementById('btn1') 
+	var clearNode = document.getElementById('btn2')
+	var resultNode = document.getElementById('box2')
+	
+	//======限行==========
+	function idTrafficControls(carNumber){
+		
+		var isNumber = false;
+		for(var i=carNumber.length-1;i>=0;i--){
+			var number1 = carNumber[i];
+			//数字
+			if(number1>='0' && number1<=9 ){
+				isNumber = true
+				break;
+				
+			}
+		}
+		//b.判断限行
+		//获取当前时间
+//		var now = new Date();
+//		var year = now.getFullYear();
+//		var month = now.getMonth();
+
+		var day = now.getDate();
+		
+		if(isNumber==true){
+			//获取星期
+		var week = now.getDay();
+		if(week > 5){
+			return carNumber + '今日不限行'
+		}
+		if(week == number1 || (week + 5)%10 == number1){
+			return carNumber + '今日限行'
+		}
+		else{
+			return carNumber + '今日不限行'
+		}
+		}
+		
+	}
+	
+	//======查询==========
+	
+	var reObj = /[京津沪渝辽吉黑冀鲁豫晋陕甘闽粤桂川云贵苏浙皖湘鄂赣青新宁蒙藏琼][A-Z]\s+[A-Z\d]{5}$/
+	queryNode.onclick = function(){
+		//a.获取输入框中的内容
+		var carNum = carNumNode.value;
+		console.log(carNum)
+		//创建新节点
+		var newNode = document.createElement('p')
+		//b.判断（地名+大写字母 5个数字或字母）
+		//正则对象.test（字符串）-匹配，返回值是布尔
+		if(reObj.test(carNum)){
+			//判断车牌号是否限行
+			var message = idTrafficControls(carNum);
+			newNode.innerText = message;
+//			newNode.innerText = carNum+'是有效的车牌号'
+			
+		}else{
+			newNode.innerText = carNum+'不是有效的车牌号'
+		//c.添加节点
+		resultNode.appendChild(newNode)
+		}
+		//========清除节点======
+		clearNode.onclick = function(){
+			resultNode.innerHTML = '';
+		}
+	}
+</script>

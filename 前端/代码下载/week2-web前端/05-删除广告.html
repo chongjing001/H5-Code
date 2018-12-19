@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			#hide{
+				display: none;
+			}
+			#ad{
+				height: 100px;
+				background-color: lightgoldenrodyellow;
+			}
+			#ad img{
+				width: 100%;
+				height: 100%;
+			}
+			#ad #close{
+				position: absolute;
+				top: 10px;
+				right: 15px;
+				width: 30px;
+				height: 30px;
+				background-color: lightgray;
+				color: white;
+				text-align: center;
+				line-height: 30px;
+			}
+			#content{
+				height: 400px;
+				background-color: deepskyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<!--html-->
+		<div id="ad">
+			<img src="img/picture-1.jpg"/>
+			<div id="close" onclick="close1()" style="cursor: pointer;">
+				X
+			</div>
+		</div>
+		<div id="content"></div>
+		
+		<!--js-->
+		<script type="text/javascript">
+			
+//			window.location
+			window.location = 'http://www.baidu.com'
+			window.location.href = 'http://www.baidu.com'
+			
+			
+			//产生0~255的随机整数
+			//parseInt() - 转换成整数
+			//parseFloat() - 转换成小数
+			//Math.random() - 产生随机数0~1(小数)
+			num = parseInt(Math.random()*255)
+			
+			
+			console.log(num)
+			function close1(){
+				var adNode = document.getElementById('ad')
+//				adNode.parentNode.removeChild(adNode)
+				// 直接移除指定标签
+//				adNode.remove()
+				adNode.addEventListener('click', function(evt){
+					evt.clientX
+					evt.clientY
+					
+					evt.pageX
+					evt.pageY  
+				
+					evt.cancelBubble = true
+				})
+				
+//				window.alert()
+				
+				
+				
+				//让指定的标签不显示
+				adNode.style.display = 'none'
+				
+
+			}
+		</script>
+		
+	</body>
+</html>

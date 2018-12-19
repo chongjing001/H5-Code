@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="addDiv()">添加</button>
+		<p id="p1" class="cp1" style="color: blueviolet;">我是段落</p>
+		<div id="div1" style="height: 400px; background-color: burlywood;">
+			<div id="div11" style="height: 60px; width: 200px; background-color: darksalmon;">
+				
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var pNode = document.getElementById('p1');
+	//获取标签内容
+	var content = pNode.innerHTML;
+	pNode.innerHTML = '我不是段落~~~'
+	var pColor = pNode.style.color
+	
+	pNode.style.color = 'coral'
+	console.log(content, pColor )
+	//1.创建节点
+	pNode.style.fontSize = '20px'
+	/*
+	 * document.createElement(标签名) - 创建指定标签节点
+	 * 标签节点是白哦前对象，可以通过document去网页中获取到，可以自己创建
+	 * 标签对象中有相应的标签相关的属性，可以通过标签节点获取或者修改这些属性值
+	 * 例如，a标签节点：herf，id，className，style属性
+	 *     img标签节点：src， id， alt，title属性
+	 * b.innerHTML和innerText属性
+	 * innerHTML - 双标签的标签内容（包含其他标签）
+	 * in呢绒Text - 双标签的标签内容（侧重只有文字）
+	 */
+	//创建标签对象
+	var divNode = document.createElement('div')
+	divNode.innerText = '我是box1'
+	var imgNode = document.createElement('img')
+	imgNode.src = 'img/slide-2.jpg'
+	/*
+	 * 2.添加节点
+	 * a.在指定的标签中的最后添加一个节点
+	 *  父节点.append
+	 */
+//	var divNode = document.getElementById('div1')
+	
+	
+	function addDiv() {
+		var divNode = document.getElementById('div1')
+		divNode.innerText = '我是box1'
+		divNode.appendChild(divNode)
+	}
+	//b.在指定的节点前插入一个节点
+	//父节点.insertBefore（新节点，指定节点）--- 在父节点中的指定节点前插入新节点
+	div1Node.insertBefore(imgNode, div1Node,firstChild)
+	
+	//3.删除节点
+	//父节点.div1Node.removeChild(子节点) - 删除父节点钟中指定的子节点
+	
+	div1Node.removeChild(imgNode)
+	
+	//清空标签（删除所有的子标签）
+	div1Node.innerHTML = null
+</script>

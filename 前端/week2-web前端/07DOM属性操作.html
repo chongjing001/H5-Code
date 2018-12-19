@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/slide-2.jpg"/>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+	 * 1.属性的节点语法操作
+	 * 节点.属性 - 获取属性的值；节点.属性 = 新值  - 修改属性的值
+	 */
+	var imgNode = document.getElementsByTagName('img')[0]
+	//2.通过相应方法对属性进行操作
+	//获取属性
+	var name = 'src'
+	
+	var srcAttr = imgNode.getAttribute(name)
+	
+	
+//	imgNode.getAttribute()  获取属性
+//	imgNode.setAttribute()  给属性赋值
+//	imgNode.removeAttribute()   删除属性
+</script>

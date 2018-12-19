@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<button onclick="windowAction()">创建新窗口</button>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+	 * 全局的window对象，用来表示当期浏览器
+	 * 声明的全局变量，其实都是绑定在window对象中的属性
+	 * 使用window的属性和方法的时候，前面的window.可以省略
+	 */
+	
+//	function windowAction(){
+//		mywindow = window.open('','','width=300px，height=300px')
+//	}
+//	
+//	//window的基本操作
+//	//1.打开新窗口
+////	window.open('http://www.baidu.com')
+////	//2.关闭
+////	window.close()
+//	
+//	//c.抵用当前窗口
+//	window.moveTo(220,220)
+//	window.focus()
+//	//调整大小
+//	mywindow.resizeTo(400,500)
+//	//刷新 - 重新请求地址
+//	//
+//	window.reload(true)
+//	
+//	//获取浏览器的狂高
+//	
+//	window.innerHeight;
+//	window.innerWidth;
+//	
+//	window.outerHeight;
+//	window.outerWidth;
+	
+	//3.弹框
+	//a.alert（提示信息） - 弹出提示信息（带确定按钮）
+	window.alert('alert弹出')
+	//confirm(提示信息) - 返回值是布尔（确定true，取消false）
+	result = window.confirm('confirm，是否删除!!!')
+	console.log('====',result)
+	
+	//prompt（提示信息，输入框中的默认值） - 取消返回null 确定返回输入中的内容
+</script>

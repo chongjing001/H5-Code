@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--1.表单标签(form)
+			表单标签的作用：收集用户信息。 - 实质是将表单标签作为容器，来收集表单标签中其他标签的信息
+			                              本身没有任何显示效果
+			                              
+			action属性: 设置提交地址
+			method属性: 提交方式(post/get)
+			
+			点提交按钮提交的时候，将表单中所有相关标签以name=value的形式，
+			按照method属性提供的提交方式，提交给action属性对应的接口
+			
+			form标签提供了两大功能：a.统一提交   b.重置
+		-->
+		<form action="" method="post">
+		</form>
+		
+		<!--2.input标签 - 单标签
+			既可以放在form标签中，也可以不放在form标签里单独使用
+			
+			type属性 - type对应的值不一样，input标签体现的功能不一样
+		-->
+
+		<form action="" method="get">
+			<!--a.text - 文本输入框
+				name属性 - 专门用来区分不同的信息，相当于字典的key
+				value属性 - 标签内容；指向输入框中的内容; 设值其实是设文本输入框中的默认值
+				placeholder属性 - 当输入框中没有内容的时候，显示的提示信息
+				maxlength属性 - 设置输入框最大能输入的文字的个数
+				
+				disabled - 禁用（输入框禁用就不能输入，按钮禁用不能点击）
+			-->
+			<font>账号：</font><input type="text" name="tel" value="726550822" placeholder="手机号..." maxlength="11"/>
+			<br />
+			<br />
+			<font>邮箱：</font><input type="text" name="email" placeholder="请输入邮箱..." maxlength="12"/>
+			<br />
+			<br />
+			<!--b.password - 密码输入框
+				name属性 - 专门用来区分不同的信息，相当于字典的key
+				value属性 - 标签内容；指向输入框中的内容; 设值其实是设文本输入框中的默认值
+				placeholder属性 - 当输入框中没有内容的时候，显示的提示信息
+				maxlength属性 - 设置输入框最大能输入的文字的个数
+			-->
+			<font>密码：</font><input type="password" name="password" value="123456" placeholder="密码.." />
+			<br />
+			<br />
+			<!--c.radio - 单选按钮
+				name属性 - 要求同一组的数据的name属性值必须一样，才能单选
+				value属性 - 不可见的，专门用于数据的提交；或者区分被选中的值
+				checked属性 - 让单选按钮默认处于选中状态
+			-->
+			<input type="radio" name="sex" value="boy" checked="checked"/><font>男</font>
+			<input type="radio" name="sex" value="girl" /><font>女</font>
+			<br />
+			<br />
+			<input type="radio" name="marry" value="已婚" /><font>已婚</font>
+			<input type="radio" name="marry" value="未婚" checked="checked"/><font>未婚</font>
+			<br />
+			<br />
+			<!--d.checkbox - 复选按钮
+				name属性 - 要求同一组的数据的name属性值必须一样，才能单选
+				value属性 - 不可见的，专门用于数据的提交；或者区分被选中的值
+				checked属性 - 让单选按钮默认处于选中状态
+			-->
+			<input type="checkbox" name="hobby" id="" value="篮球" /><font>🏀</font>
+			<input type="checkbox" name="hobby" id="" value="足球" /><font>⚽️</font>
+			<input type="checkbox" name="hobby" id="" value="羽毛球" /><font>🏸</font>
+			<input type="checkbox" name="hobby" id="" value="乒乓球" /><font>🏓</font>
+			<input type="checkbox" name="hobby" id="" value="排球" /><font>🏐</font>
+			<br />
+			<br />
+			
+			<!--e.button - 普通按钮
+				value属性 - 决定按钮上显示的文字
+			-->
+			<input type="button" value="注册" />
+			
+			<!--f.submit - 提交按钮
+				点击提交按钮后会自动提交当前form中所有设置了name属性的相关标签的值。
+				以‘name=value’的形式进行提交
+			-->
+			<input type="submit" name="" id="" value="提交" />
+			
+			<!--g.reset - 重置按钮
+				将当前form标签中所有的标签状态设置为初始状态
+			-->
+			<input type="reset" name="" id="" value="重置" />
+		</form>
+		
+		<!--3.按钮标签(button)
+			双标签，中间内容部分更灵活
+		-->
+		<!--文字按钮-->
+		<button>登录</button>
+		<!--图片按钮-->
+		<button>
+			<img src="img/luffy.jpg"/>
+			<p>登录</p>
+		</button>
+		
+	</body>
+</html>

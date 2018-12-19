@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="post">
+			<!--1.下拉菜单(select-option)
+				a.select标签 - 代表整个下拉菜单
+				name属性 - 区分和提交
+				
+				b.option标签 - 下拉菜单中的选项
+				内容 - 显示部分
+				value属性 - 提交的内容
+				selected属性 - 设置默认选中
+				
+				c.optgroup标签
+				显示效果上对下拉菜单进行分组
+				label属性 - 给分组设置名字
+			-->
+			<font>考试科目：</font><select name="学科">
+				<optgroup label="理科"></optgroup>
+				<option value="">数学</option>
+				<option value="">物理</option>
+				<option value="">化学</option>
+				<option value="">生物</option>
+				<optgroup label="文科"></optgroup>
+				<option value="">语文</option>
+				<option value="">政治</option>
+				<option value="">地理</option>
+				<option value="">历史</option>
+			</select>
+			<br />
+			<font>城市：</font><select name="province">
+				<option value="四川">四川省</option>
+				<option value="广西">广西省</option>
+				<option value="广东">广东省</option>
+				<option value="湖南">湖南省</option>
+				<option value="湖北">湖北省</option>
+				<option selected="selected" value="云南">云南省</option>
+				<option value="辽宁">辽宁省</option>
+				<option value="吉林">吉林省</option>
+				<option value="黑龙江">黑龙江省</option>
+			</select>
+			<select name="city">
+				<option value="">成都市</option>
+				<option value="">南宁市</option>
+				<option value="">深圳市</option>
+				<option value="">长沙市</option>
+				<option value="">武汉市</option>
+				<option value="">昆明市</option>
+				<option value="">沈阳市</option>
+				<option value="">长春市</option>
+				<option value="">哈尔滨</option>
+			</select>
+			
+			<!--2.多行文本输入框(textarea)
+				可以输入多行内容，内容超出范围可以上下滚动
+				name属性 - 提交和区分
+				rows - 一次性可以显示的行数(决定高度)
+				cols - 列数（一行最多可以显示多少个文字，决定宽度）
+				placeholder - 提示语句
+				内容 - 相当于value
+				maxlength属性 - 最多能输入的文字个数
+			-->
+			<textarea maxlength="200" name="" rows="4" cols="20" placeholder="意见..." >默认值</textarea>
+			
+		</form>
+	</body>
+</html>

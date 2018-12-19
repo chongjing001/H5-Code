@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			#div2{
+				width: 200px;
+				height: 200px;
+				background-color: lightcyan;
+				position: absolute;
+				left: 30px;
+			}
+			#div2 #div21{
+				width: 100px;
+				height: 100px;
+				background-color: sandybrown;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="addDiv()">添加</button>
+		<p id="p1", class="cp1" style="color: darkseagreen;">我是段落</p>
+		<div id="div1" style="height: 400px; background-color: lightgoldenrodyellow;">
+			<div id="div11" style="height: 60px; width: 120px; background-color: yellowgreen;">
+			</div>
+		</div>
+		
+		<div id="div2">
+			<div id="div21">
+				
+			</div>
+			
+		</div>
+		
+	</body>
+</html>
+
+<script type="text/javascript">
+	var pNode = document.getElementById('p1');
+	//获取标签内容
+	var content = pNode.innerHTML;
+	//修改标签内容
+	pNode.innerHTML = '我不是段落，哈哈~'
+	//获取标签样式中的文字颜色
+	var pColor = pNode.style.color;
+	//修改标签样式
+	pNode.style.color = 'salmon'
+	pNode.style.fontSize = '30px'
+	
+	console.log(content, pColor)
+	
+	//1.创建节点
+	//document.createElement(标签名) - 创建指定标签节点(创建后不会自动添加到浏览器上)
+	/* a.节点属性：
+	 * 标签节点就是标签对象，可以通过document去网页中获取到，也可以自己创建
+	 * 标签对象中有相应的标签相关的属性，可以通过标签节点获取或者修改这些属性值。
+	 * 例如，a标签节点有：href属性, id属性, className属性, style属性等....
+	 *      img标签节点有：src属性,id属性，style属性,alt属性, title属性等....
+	 * 
+	 * b.innerHTML和innerText属性
+	 * innerHTML - 双标签的标签内容(包含其他标签)
+	 * innerText - 双标签的标签内容(侧重只有文字)
+	 */
+	//创建一个div标签对象
+	var divNode =  document.createElement('div')
+	divNode.innerText = '我是box1'
+	
+	//创建一个img标签对象
+	var imgNode = document.createElement('img')
+	imgNode.src = 'img/thumb-1.jpg'
+	
+	//2.添加节点
+	//a.在指定的标签中的最后添加一个节点
+	//父节点.appendChild(需要添加的节点)
+	var div1Node = document.getElementById('div1')
+	function addDiv(){
+		var divNode =  document.createElement('div')
+		divNode.innerText = '我是box1'
+		div1Node.appendChild(divNode)
+	}
+	
+	//b.在指定的节点前插入一个节点
+	//父节点.insertBefore(新节点, 指定节点) --- 在父节点中的指定节点前插入新节点
+	div1Node.insertBefore(imgNode, div1Node.firstChild)  
+	
+	//3.删除节点
+	//父节点.removeChild(子节点)  - 删除父节点中指定的子节点
+	div1Node.removeChild(imgNode)
+	//清空标签（删除所有的子标签）
+	div1Node.innerHTML = null
+	
+	//节点.remove() - 将节点从浏览器中删除
+	
+	//4.拷贝节点
+	//节点.cloneNode() - 拷贝指定节点，产生新的节点(浅拷贝不会拷贝节点中的子节点)
+	//节点.cloneNode(true) - 拷贝指定节点，产生新的节点(深拷贝会拷贝节点中的子节点)
+	var div2Node = document.getElementById('div2');
+	var newDiv2Node = div2Node.cloneNode(true)
+	div1Node.appendChild(newDiv2Node)
+	
+	//5.替换节点
+	//父节点.replaceChild(新节点, 子节点) - 使用新节点替换父节点中指定的子节点
+	var imgNode = document.createElement('img')
+	imgNode.src = 'img/thumb-2.jpg'
+	div2Node.replaceChild(imgNode, div2Node.firstElementChild)  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>

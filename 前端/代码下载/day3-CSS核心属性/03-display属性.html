@@ -1,0 +1,29 @@
+<!--
+	display属性值代表的是标签的类型：
+	1.block : 块标签
+	2.inline : 行内
+	3.inline-block : 行内块
+	默认情况下，我们的标签只有行内的和块的，没有行内块的。可以通过修改display属性值来修改标签类型
+	
+	注意：使用行内块的时候，有一个没有办法修复的坑。行内块到其他标签之间有一个间隙，而且这个间隙不能消除。
+	     所以不到万不得已不使用行内块
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--1.块标签变成行内标签-->
+		<p style="background-color: lightpink; display: inline; width: 200px;">我是段落</p>
+		<p style="background-color: lightblue; display: inline;">我是段落2</p>
+		<!--2.块标签变成行内块标签-->
+		<p style="background-color: lightpink; display: inline-block; width: 200px;">我是段落3</p>
+		<p style="background-color: lightblue; display: inline-block; height: 60px;">我是段落4</p>
+		<!--3.行内转换成块-->
+		<a href="", style="display: block;background-color: darkcyan;">a1</a>
+		<a href="">a2</a>
+	</body>
+</html>

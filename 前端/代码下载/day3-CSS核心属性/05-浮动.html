@@ -1,0 +1,57 @@
+<!--浮动(float)：
+	letf: 左浮动 - 先上再左
+	right: 右浮动 - 先上再右
+	1.浮动会脱标(脱离标准流) - 之前标准流中的布局方式无效;
+	脱离标准流布局方式：所有标签都可以一行显示多个，默认大小是内容的大小，设置宽高有效
+	
+	2.浮动
+	
+	布局原则，努力的向浏览器的左上角靠，先上再左
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				float: left;
+			}
+			a{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<!--1.脱标-->
+		<!--<p style="background-color: chartreuse; width: 300px;">我是段落</p>
+		<p style="background-color: salmon; width: 300px;">我是段落2</p>
+		<a style="background-color: royalblue; width: 200px;">我是a标签</a>-->
+		
+		<!--2.浮动-->
+		<!--<div style="background-color: seagreen; width: 200px; height: 100px; float: left;"></div>
+		<div style="background-color: red; width: 300px; height: 120px;">
+			
+		</div>-->
+		
+		<!--3.左浮动-->
+		<!--<div style="background-color: seagreen; width: 200px; height: 100px;"></div>
+		<div style="background-color: red; width: 300px; height: 120px; float: left;">	
+		</div>-->
+		<!--<div style="width: 100px; height: 100px; background-color:red; float: left;">div1</div>
+		<div style="width: 200px; height: 100px; background-color:green; float: left;">div1</div>
+		<div style="width: 350px; height: 100px; background-color:blue;">div1</div>
+		<div style="width: 400px; height: 100px; background-color:yellow; float: left;">div1</div>-->
+		
+		<!--4.右浮动-->
+		<!--<div style="width: 200px; height: 100px; background-color:green; float: left;">div1</div>
+		<div style="width: 350px; height: 100px; background-color:blue; float: right;">div1</div>-->
+		
+		<!--5.布局-->
+		<div style="height: 150px; background-color: green;"></div>
+		<div style="height: 300px; width: 50%; background-color: orange; float: left;"></div>
+		<div style="width: 25%; height: 600px; background-color: deeppink; float: right;"></div>
+		<div style="width: 25%; height: 600px; background-color: yellowgreen; float: right;"></div>
+		<div style="width: 50%; height: 300px; background-color: slateblue; float: left;"></div>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				border: 0;
+				/*padding: 0;*/
+				text-decoration: none;
+			}
+			button{
+				color: white;
+				background-color: red;
+			}
+			button a{
+				color: white;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<font>5s后跳转到百度</font>
+		<button><a href="http://www.baidu.com" target="_blank">now</a></button>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var num = 4
+	var fontNode = document.getElementsByTagName('font')[0]
+	console.log(fontNode)
+	var intervall1 = window.setInterval(function(){
+		message = String(num)+'s后跳转到百度'
+		fontNode.innerHTML=message
+		num--
+		if(num==0){
+			window.open("http://www.baidu.com")
+			window.close()
+		}
+	},1000)
+	
+	
+	
+</script>

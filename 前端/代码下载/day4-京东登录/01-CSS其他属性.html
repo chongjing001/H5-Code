@@ -1,0 +1,162 @@
+<!--
+	1.标准流:
+	块级 - 一个占一行，默认宽度是父标签的宽度，设置宽高有效
+	行内 - 一行可以显示多个, 默认大小是内容的大小, 设置宽高无效
+	行内块 - 一行可以显示多个, 默认大小是内容的大小,设置宽高有效
+	
+	2.display：修改标签类型
+	block
+	inline
+	inline-block
+	
+	3.脱标(脱流) - 浮动、定位
+	一行可以显示多个, 默认大小是内容的大小,设置宽高有效（标签之间不会有额外的间隙） 
+	
+	4.浮动(float)
+	letf - 左浮
+	right - 右浮
+	a.文字环绕 - 被环绕的标签浮动，内容环绕标签不浮动
+	b.清除浮动 - 清除因为浮动而产生的问题
+		选中高度塌陷的父标签{overflow: hidden}
+	
+	  高度塌陷 - 父标签不浮动，子标签浮动就会产生高度塌陷
+	  
+	5.定位
+	a.距离 - left,right,top,bottom
+	b.设参考对象 - position
+	initial/static(默认) - 不定位
+	absolute - 相对父标签定位(要求父标签的position属性值不能是initial/static)
+	relative - 相对自己定位(自己在标准流中的位置)
+	fixed - 相对浏览器定位
+	sticky - 浏览器滚动相对浏览器定位，不滚动就相对自己在标准流中的位置定位(适用于最后一个标签)
+
+	6.盒子模型
+	一个标签由四个部分组成：content，padding，border，margin其中margin不可见
+	
+	
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+	</head>
+	<body style="position: sticky;">
+		<!--1.文字相关属性-->
+		<style type="text/css">
+			a{
+				text-decoration: none;
+			}
+			div{
+				/*1.字体大小*/
+				font-size: 20px;
+				/*2.文字颜色*/
+				color: forestgreen;
+				/*3.字体名字*/
+				font-family: wst_ital;
+				/*4.文字加粗
+				 * bolder(更粗的)/bold（加粗）/normal（常规）/100—900
+				 * 100-400 ：一般
+				 * 500 ： 常规
+				 * 600-900：加粗
+				 */
+				font-weight: 100;
+				/*5.文字样式
+				 * italic - 倾斜
+				 * oblique - 倾斜
+				 * normal - 不倾斜
+				 */
+				font-style: normal;
+				
+				/*6.水平对齐方式
+				 * left(默认) - 左对齐
+				 * right - 右对齐
+				 * center - 居中
+				 * 注意：这个属性是针对标签中的内容(内容可以是文字，也可以是其他的标签)
+				 */
+				text-align: left;
+				
+				/*7.文字行高 - 设置一行文字的高度
+				 * 一个标签中只有一行内容的时候可以通过设置行高和标签高度相同来让内容在垂直方向居中
+				 */
+				line-height: 100px;
+				
+				/*8.文字装饰器
+				 * none - 去掉装饰器
+				 * underline - 添加下划线
+				 * overline - 添加上划线
+				 * line-through - 删除线
+				 */		
+				text-decoration: line-through;	
+				
+				/*9.首行缩进*/
+				text-indent: 2em; 
+				
+				/*10.字间距*/
+				letter-spacing: 10px;				
+			}
+		</style>
+		<div id="" style="background-color: darkkhaki; height: 100px;">
+			<!--<span href="">a1</span>
+			<span href="">a2</span>
+			<span href="">a3</span>
+			<span href="">a4</span>-->
+			我是一段文字 hello world!
+		</div>
+		
+		<!--2.列表相关属性-->
+		<style type="text/css">
+			ul{
+				/*1.定义符号样式
+			 	* disc(实心圆)/circle(空心圆)/square(实心方块)/none(去掉列表符号)
+			 	*/
+				list-style-type: circle;
+				
+				/*2.定义符号图片*/
+				list-style-image: url(img/aaa.ico);
+				
+				/*3.定义符号位置
+				 * outside
+				 * inside
+				 */
+				list-style-position: outside;
+			}
+			
+			
+			
+		</style>
+		<ul>
+			<li>数学</li>
+			<li>语文</li>
+			<li>英语</li>
+		</ul>
+		
+		<style type="text/css">
+			#bg{
+				/*1.设置背景图
+				 * 将指定的图片作为当前标签的背景
+				 */
+				background-image: url(img/logo.png);
+				
+				/*2.背景图是否平铺
+				 * repeat(默认) - 当背景图比标签小的时候，背景会重复渲染，直到将标签全部铺满为止
+				 * no-repeat - 背景图只渲染一次
+				 */
+				background-repeat: no-repeat;
+				
+				/*3.背景图的位置
+				 * x坐标 - 数值/letf/right/center
+				 * y坐标 - 数值/top/bottom/center
+				 */
+				background-position-x: 100px;
+				background-position-y: top;
+			}
+		</style>
+		<div id="bg" style="width: 600px; height: 500px; background-color: silver;">
+			
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<script type="text/javascript">
+	//1.字符串字面量
+	//a.使用双引号或者单引号括起来的字符集
+	//b.除了普通字符以外还可以是转义字符:\n, \t, \\, \', \"
+	//c.\u4位16进制值对应的Unicode编码, \u4e00 - 一
+	str1 = '\\abc\n"123\''
+	str2 = "abc\"123\u4e00==="
+	console.log(str1, str2)
+	
+	//2.获取字符
+	//字符串[下标] - 获取单个字符
+	//下标 - 范围是0 ~ 长度-1；下标如果越界取到的值是undefined
+	//js中没有切片语法
+	str1 = 'hello js'
+	console.log(str1[1])
+	
+	//3.相关运算: +
+	// NaN - js中一个特殊的值，类似undefined、null,用来表示一个不存在的数值
+	// 字符串+数据 - 支持字符串和其他任何数据相加，是将其他数据全部转换成字符串，然后再拼接
+	
+	str2 = 'abc'+ [1, 'abc',  2, '123']
+	console.log(str2)
+	
+	// 补充：js中数据类型转换: 类型名()
+	num_str = String(123)
+	str_num = Number('a23.45')
+	arr_str = String([1, true, 'abc'])
+	console.log(num_str, str_num,arr_str)
+	
+	//4.字符串长度
+	console.log('hello world'.length)
+	
+	str3 = 'abc'   // str3是String类型
+	str4 = new String('abc')   //object
+	console.log(str3==str4, str3 === str4)
+	console.log(str3[1], str4[1])
+	
+	//5.字符串相关方法(见菜鸟教程：http://www.runoob.com/js/js-strings.html)
+	function yt_print(aa){
+		console.log(aa)
+	}
+	yt_print('abc'.charAt(2))
+	yt_print(String.fromCharCode(97))
+	result = 'abcd12abc23hhh123'.replace(/\d+/g, '*')
+	yt_print(result)
+	for(index in result){
+		yt_print(index)
+	}
+	
+	
+	//6.js中的数组值需要关注：a.怎么获取数组中的元素  b.数组对应的方法  c.元素可以是任何类型
+	arr = [1, 'abc', true]  // arr = {0: 1, 1: 'abc', 2: true}
+	yt_print(arr)
+	nums = [1, 34, 67, 2, 344]
+	new_nums = nums.sort(function(a,b) {return b-a})
+	yt_print(new_nums)
+	
+	
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

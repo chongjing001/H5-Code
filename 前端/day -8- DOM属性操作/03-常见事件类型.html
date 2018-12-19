@@ -1,0 +1,36 @@
+<!--
+	常见的事件类型
+	1.onload - 页面加载完成时对应事件（标签加载成功）
+	window.onload = 函数
+	
+	2.鼠标事件
+	onclick - 点击
+
+	onmouse...
+	
+	3.键盘事件
+	onkeypress - 
+	onkeydown - 
+	onkeyup - 
+	
+	4.输入框内容改变
+	onchange - 输入框输入状态结束
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//在页面加载完成后
+			window.onload = function(){
+				var pNode = document.getElementById('p1')
+				console.log(pNode)
+			}
+			
+		</script>
+	</head>
+	<body>
+		<p id="p1">我是段落</p>
+	</body>
+</html>

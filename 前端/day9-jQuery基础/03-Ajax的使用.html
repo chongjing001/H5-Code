@@ -1,0 +1,60 @@
+<!--
+	Ajax（由jQuery封装的） - asyncjronous JavaScript + xml（异步js+xml）
+	
+	一般用来做数据请求，类似python中的requests库（http（）
+	
+	语法：
+	$.get(url,data,回调函数，返回的数据类型) - get请求
+	 - url：请求地址（字符串）
+	 - data：参数列表（对象）
+	 - 回调函数 ：请求成功后自动调用的函数（函数、匿名函数）
+	 - 返回数据类型：请求到的数据的格式（字符串，例如："json"）
+	2.post请求 
+	$.post(url,data,回调函数，返回的数据类型)
+	
+	3.ajax
+	$.ajax({
+	    'url':请求地址，
+	    'data':{参数名1：值1，参数名2：值2...}
+	    'type':'get'/'post'
+	    'dataType':返回数据类型
+	    'success':function(结果){
+	            请求成功后要做的事
+	    }
+	
+	
+	})
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</head>
+	<body>
+		<button id="bon1">点我</button><br />
+	</body>
+</html>
+
+		
+		
+<script type="text/javascript">
+	function getPicture(){
+		var url1 = 'http://api.tianapi.com/meinv/?key=&num=10'
+		$.get(url1,{'key':'772a81a51ae5c780251b1f98ea431b84','num':"10"},function(re){
+		console.log(re)
+		
+		var list1 = re.newslist
+		for(var i in list1){
+			var dict1 = list1[i]
+			var pictureUrl = dict1.picUrl
+			var newImgNode = $('<img style="width: 200px; height: 200px;"/>').attr('src', pictureUrl)
+			$('body').append(newImgNode)
+			}
+		});
+	}
+	
+	$('#bon1').on('click',getPicture)
+	
+</script>

@@ -1,0 +1,78 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p1" class="c1">我是段落1</p>
+		<a href="" id="p1" class="c1">百度一下</a>
+		<a href="">刷新</a>
+		<input type="" name="username" id="" value="" />
+		<input type="" name="username" id="u" value="" />
+	</body>
+</html>
+<!--
+	1.什么是DOM（文档对象模型）
+	DOM是 document object mode 的缩写
+	
+	DOM模型是一个树结构。里面是由各种节点组成
+	
+	2.document对象 - js写好的一个对象，代表的是网页内容结构
+	通过document对象可以拿到网页中所有内容对应的节点
+	
+	3.获取节点（获取网页中的标签）
+	
+-->
+
+
+<script type="text/javascript">
+	//=========节点操作========
+	//1.获取节点
+	//a.通过标签的id值来获取指定的标签
+	/*document.getElementById(id值)  - 返回的是节点对象
+	 * 如果html中同样的id对应的标签有多个，只能取一个，所以id值一般要唯一
+	 * 
+	 */
+	
+	var pNode = document.getElementById('p1')
+	console.log(pNode)
+	
+	//b.通过标签名来获取指定的标签
+	/*document.getElementsByTagName(标签名)- 返回的是一个数组,内容是节点
+	 * 
+	 */
+	var aNodeArray = document.getElementsByTagName('a')
+	
+	for(i in aNodeArray){
+		aNode = aNodeArray[i]
+		
+		if(typeof(aNode) == 'object'){
+			console.log(aNode, '是标签')
+		}
+		
+		
+	}
+	
+	/*
+	 * 通过类名来获取指定的标签
+	 * document.getElementsByClassName(类名) - 获取所有class属性值是是指定值的标签，返回值是数组对象
+	 */
+	
+	var c1NodeArray = document.getElementsByClassName('c1')
+	console.log(c1NodeArray)
+	
+	
+	
+	/*
+	 * d.通过name属性的值
+	 * document.getElementsByName() - 返回一个节点数组对象
+	 */
+	console.log(document.getElementsByName('username'))
+	
+	
+	
+</script>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//1.setInterval(函数，定时时间) - 每隔制定的时间调用一次函数（时间单位：毫秒）
+	var num = 0
+	var intervall1 = window.setInterval(function(){
+		//meige1秒执行一次
+		document.write(num)
+		num++
+		if(num==10){
+			//停止
+			window.clearInterval(intervall1)
+		}
+	},1000)
+	
+	//2.setTimeout（函数，时间） - 只调用一次
+	
+	var message = 'over'
+	window.setTimeout(function(){
+		window.alert(message)
+	},5000)
+	
+	//3.停止 clearInterval()
+	//      clearTimeout()
+	
+</script>

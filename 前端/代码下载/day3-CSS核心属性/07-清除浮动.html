@@ -1,0 +1,44 @@
+<!--清除浮动：
+	1.高度塌陷
+	指的是清除因为浮动而产生的高度塌陷问题 - 父标签不浮动，子标签浮动就会产生高度塌陷问题
+	
+	2.清除浮动
+	a.添加空盒子 - 在高度会塌陷的父标签中的最后添加一个空的div,并且设置这个空的div的样式的clear为both
+	b.overflow - 选中高度塌陷的标签，设置样式的overflow的值为hidden
+	c.万能清除法 - 
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*清除浮动2*/
+			/*#div1{
+				overflow: hidden;
+			}*/
+			
+			/*万能清除法*/
+			/*#div1:after{
+				display: block;
+				content: "";
+				visibility: hidden;
+				clear: both;
+				height: 0;
+			}*/
+			#div1{
+				zoom: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="height: 120px; background-color: brown;"></div>
+		<div id="div1" style="background-color: seagreen;">
+			<div style="height: 100px; width: 300px;background-color: sandybrown; float: left;"></div>
+			<div style="height: 500px; width: 250px;background-color: skyblue; float: right;"></div>
+			<!--清除浮动1-->
+			<div style="clear: both;"></div>
+		</div>
+		<div style="height: 120px; background-color: #9ACD32;"></div>
+	</body>
+</html>

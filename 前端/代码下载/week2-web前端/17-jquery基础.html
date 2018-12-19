@@ -1,0 +1,136 @@
+<!--1.什么是jQuery
+	jQuery就是javascript的一个第三方库，主要针对标签操作进行封装(包括节点操作,属性操作,样式操作,事件等)，
+	目的是为了让js写起来更快更方便
+	
+	2.怎么写jQuery代码
+	a.通过script标签导入jQuery文件
+	b.在jQuery中所有的内容都是封装到jQuery对象中的，jQuery对象可以用'$'代替  
+	
+	3.节点操作
+	window.onload  - 当网络中的内容全部加载成功后触发的事件(如果有网络图片，会等图片加载成功)
+	$(函数) - 函数中的函数体会等标签全部添加成功后执行
+	
+	
+	
+	
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--导入jQuery本地文件-->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<!--企业开发的时候，通过cdn加速，去服务器直接到入jQuery文件-->
+		<!--<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>--> 
+		<script type="text/javascript">
+			//1.等待加载完成
+			//a.
+//			window.onload = function(){
+//				
+//			}
+			//b.等待页面中所有的标签添加成功,就会触发
+			//完整版
+//			$(document).ready(function(){
+//				
+//			})
+			//简写版
+			$(function(){
+				
+				var inter1;
+				function timeAction(){
+					inter1 = window.setInterval(function(){
+						console.log('！！！！')
+					}, 1000);
+				}
+				timeAction()
+				$('#aa').on('click',function(){
+					if(inter1){
+						window.clearInterval(inter1)
+						inter1 = null
+					}else{
+						timeAction()
+					}
+				});
+				
+				console.log(document.getElementsByTagName('p')[0])
+				//2.获取节点操作(选择器)
+				//a.选择器直接选中相应的标签
+				// $(选择器) - 选择器是在css中怎么写这儿就怎么写
+				//$('标签选择器') - 选择网页中所有的指定标签,返回是jQuery对象不是数组
+				//注意：如果选择器同时选中了多个，返回值和选中一个的时候的类型是一样的。
+				//     可以通过结果直接对选中的所有标签一起操作
+				var divNodes = $("div");
+				console.log('====',divNodes);
+				divNodes.css('color','red');
+				
+				var div11Node = $('#div11');
+				console.log(div11Node);
+				console.log($('.cdiv1'))
+				console.log($('a,p'))
+				console.log($('#div2 a'))
+				
+				//b.父子选择器
+				console.log($('#div2>a'))   //和后代选择器效果一样
+				console.log($('p + a'))   //获取紧跟着p标签的a标签
+				console.log($('#p1~*'))   //获取和id是p1的标签的后面的所有同级标签
+				console.log($('div:first'))   //第一个div标签
+				console.log($('p:last'))     //最后一个p标签
+				console.log($('div *:first-child'))   //找到所有div标签中的第一个子标签
+				
+				//3.创建标签
+				//$('HTML标签语法') ,例如：$('<div style="color: red">我是div</div>')
+				var imgNode = $('<img src="img/a1.jpg"/>')
+				var divNode = $('<div style="background-color: #00BFFF; width: 100px; height: 100px;"></div>')
+				//4.添加标签
+				/*
+				 * 父标签.append(子标签) - 在父标签的最后添加子标签
+				 * 父标签.prepend(子标签) - 在父标签的最前面添加子标签
+				 */
+				$('body').append(imgNode)      
+				$('body').prepend(divNode)  
+				$('h1').before($('<h1 style="color:yellowgreen;">我是标题0</h1>'))
+				$('h1').after($('<h2 style="color: slateblue;">我是标题22</h2>'))  
+				//5.删除标签
+				//标签.empty() - 清空指定标签
+				//标签.remove() - 删除指定标签
+				$('#div2').empty()
+				$('h1').remove()
+				//6.拷贝和替换(见手册)
+				
+				
+				
+			})
+			
+			
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<div id="aa">
+			你好
+		</div>
+		<p >我是段落0</p>
+		<a href="">百度0</a>
+		<div id="div1" class="cdiv1">
+			<p id="p1">我是段落</p>
+			<a href="">百度1</a>
+			
+			
+			<div id="div11">
+				我是div11
+			</div>
+			<h1>我是标题1</h1>
+			
+			<a href="">百度11</a>
+		</div>
+		<div id="div2">
+			<a href="">百度2</a>
+			我是div2
+			<p id="p2">我是段落2</p>
+		</div>
+		
+	</body>
+</html>

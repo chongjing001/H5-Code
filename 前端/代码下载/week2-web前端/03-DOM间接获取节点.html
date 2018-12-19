@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box1">
+			box1
+			<div id="box11">
+				div11
+			</div>
+			<div id="box12">
+				div12
+			</div>
+			<div id="box13">
+				div13
+			</div>
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var box11Node = document.getElementById('box11');
+	//1.获取父节点
+	// 子节点.parentElement - 获取子节点对应的父节点
+	var box1Node = box11Node.parentElement;
+	var box1Node2 = box11Node.parentNode;
+	console.log(box1Node, box1Node2);
+	
+	//2.获取子节点
+	//a.获取所有的子节点
+	//父节点.children - 返回一个数组对象
+	var allChildArray = box1Node.children
+	console.log(allChildArray)
+	
+	//父节点.childNodes - 获取父节点下所有的内容（包括子节点和文本）
+	var allChildArray2 = box1Node.childNodes
+	console.log(allChildArray2)
+	
+	//b.获取第一个子节点
+	//父节点.firstElementChild
+	var childNode = box1Node.firstElementChild
+	console.log(childNode)
+	//c.获取最后一个子节点
+	var childNode2 = box1Node.lastElementChild
+	console.log(childNode2)   
+</script>

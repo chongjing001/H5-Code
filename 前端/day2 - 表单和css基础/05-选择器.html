@@ -1,0 +1,59 @@
+<!--
+	选择器{属性名1：属性值；...}
+	
+	css提供的选择器写法（常见）
+	 1.标签选择器：直接将标签名作为选择器，选中当前html中所有指定的标签
+	                         例如：a{} - 选中当前html中所有的a标签； div{} - 选择当前html文件中所有div
+	 2.id选择器：将标签的id属性值前面加#作为选择器；选中所有id是指定值的标签
+	                      例如：#text{} - 
+	 3.class 选择器（类型选择器）：将标签的class属性值前面加.作为选择器，训盅所有class指定值的标签
+	                   例如：.test - 选中当前html中class属性值是test的所有标签
+	 4.群组选择器：将多个选择器用逗号隔开作为一个选择器，同时选中每个单独选择器所选中的所有标签
+	 						例如：p,a,.test,#test{} - 选中所有p和a标签，a标签和class值是test以及id值是test的标签
+	 
+	 5.后代选择器：将多个选择器用空格隔开作为一个选择器，从前往后一层一层的找
+	                       找到最后一个选择器对应的标签
+	                       例如：p .test #test{} - 选中div标签中class值是test的标签中的id值是text的标签
+	 								div div p{ } - 选中div中div的p标签
+	6.通配符：将*作为选择器，选中当前页面中所有的标签
+	                  例如*{} - 选中所有标签
+-->
+<style type="text/css">
+	/*style可以写在html文件的任何位置*/
+	div{
+		color: hotpink;
+	}
+	#text{
+		background: darkcyan;
+	}
+	.test{
+		width: 300px;
+		height: 200px;
+		background: navajowhite;
+	}
+	*{
+		text-decoration: underline;
+	}
+</style>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="icon" type="image/ico" href="img/aa.ico"/>
+	<body>
+		<div id="text">
+			<div>
+				div1
+			</div>
+			<div class="test">
+				div2
+				<div id="" class="test">
+					div3
+				</div>
+			</div>
+		</div>
+		<p id="text">段落</p>
+	</body>
+</html>

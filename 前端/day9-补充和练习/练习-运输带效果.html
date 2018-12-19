@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0 ;
+				border: 0;
+				padding: 0;
+				/*position: relative;*/
+			}
+			#top{
+				height: 208px;
+				width: 520px;
+				border: 2px solid #909090;
+				margin-left: 500px;
+				
+			}
+			#bottom{
+				height:50px ;
+				width: 520px;
+				background-color: grey;
+				margin-left: 502px;
+				/*margin-top: 201px;*/
+				line-height: 50px;
+				
+			}
+			#bottom #bon1{
+				height: 30px;
+				width: 50px;
+				font-size: 20px;
+				background-color: red;
+				color: white;
+				margin-left: 200px;
+				
+			}
+			#bottom #bon2{
+				height: 30px;
+				width: 50px;
+				font-size: 20px;
+				background-color: red;
+				color: white;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="top" class="c1">
+			
+		</div>
+		<div id="bottom" >
+			<button id="bon1">添加</button>
+			<button id="bon2">闪烁</button>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	function randomColor(){
+		var num1 = parseInt(Math.random()*255);
+		var num2 = parseInt(Math.random()*255);
+		var num3 = parseInt(Math.random()*255);
+		return 'rgb('+num1+','+num2+','+num3+')';
+	}
+	
+	
+	var topNode = document.getElementById('top')
+	var addNode = document.getElementById('bon1')
+	var pauseNode = document.getElementById('bon2')
+	
+	addNode.onclick = function(){
+		var contentNode = document.createElement('div')
+		
+		
+		contentNode.style.width = '50px'
+		contentNode.style.height = '50px'
+		contentNode.style.margin = '1px'
+		contentNode.style.float= 'left'
+		contentNode.style.backgroundColor = randomColor()
+		var num = topNode.children.length
+		if(num==40){
+			topNode.removeChild(topNode.firstElementChild)
+		}
+		topNode.appendChild(contentNode)
+	}
+	var num = 0
+	pauseNode.onclick = function(){
+		num++
+		var allAddNode = topNode.children
+		var interval1 = window.setInterval(function(){
+			if(num&1){
+				pauseNode.innerText = '暂停'
+				for(i=0;i<allAddNode.length;i++){
+				allAddNode[i].style.backgroundColor = randomColor()
+				}
+			}
+			else{
+			pauseNode.innerText = '闪烁'
+			window.clearInterval(interval1)
+		}			
+		},200)
+				
+	}
+	
+	
+</script>

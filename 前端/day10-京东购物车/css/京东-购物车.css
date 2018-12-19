@@ -1,0 +1,156 @@
+
+
+
+/*========通用========*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+
+/*=============顶部==========*/
+#top{
+	height: 40px;
+	background-color: #e5e5e5;
+	position: relative;
+	
+	line-height: 40px;
+	
+	
+}
+/*======左边的导航条*/
+#top .leftNav{
+	position: absolute;
+	left: 150px;
+}
+
+#top .leftNav,#top .rightNav{
+	list-style: none;
+}
+
+#top li{
+	/*同时设置*/
+	margin: 0 10px;
+	
+}
+
+#top img{
+	/*图片在内容垂直居中*/
+	height:18px ;
+	vertical-align: middle;
+}
+
+#top a{
+	vertical-align: middle;
+	font-size: 14px;
+	color:#a0a0a0 ;
+	font-weight: 200px;
+	
+	text-decoration: none;
+	
+}
+/*======*/
+#top .seletedLi{
+	width: 70px;
+	padding-left: 10px;
+	margin: 0;
+	
+}
+
+#top .seletedLi .menuTop{
+	position: absolute;
+	height:40px ;
+	width: 70px;
+	padding-left: 10px;
+}
+#top .seletedLi .menuBottom{
+	position: absolute;
+	height: 280px;
+	width: 280px;
+	top: 40px;
+	background-color: white;
+	border: 1px solid #cccc;
+	border-top: 0;
+	
+	display: none;
+	
+}
+
+
+.seletedLi:hover{
+	background-color: white;
+	border: 1px solid #cccc;
+	border-bottom: 0;
+	
+}
+
+#top .seletedLi:hover .menuTop{
+	background-color: white;
+	border: 1px solid #cccc;
+	border-bottom: 0;
+}
+#top .seletedLi:hover .menuBottom{
+	display: block;
+	
+	
+}
+
+#top .city{
+	margin: 0 10px;
+	float: left;
+	width: 50px;
+	height: 30px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 13px;
+	color:#a0a0a0 ;
+	/*vertical-align: middle;*/
+	line-height: 25px;
+	
+}
+#top .city:hover{
+	color: red;
+	background-color: #e3e3e3;
+}
+
+
+
+#top a:hover{
+	color: red;
+}
+
+#top span{
+	float: left;
+	font-size: 10px;
+	font-weight: 100;
+	color: #cccc;
+}
+
+
+/*======右边的导航条*/
+#top .rightNav{
+	position: absolute;
+	right: 150px;
+}
+
+#top .leftNav li{
+	float: left;
+}
+#top .rightNav li{
+	float: left;
+}
+
+
+
+
+
+
+
+/*==============底部=============*/
+#bottom{
+	height: 600px;
+	background-color: darkkhaki;
+}

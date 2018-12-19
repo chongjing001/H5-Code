@@ -1,0 +1,84 @@
+
+<!--
+	常见事件类型
+	1.onload - 页面加载完成对应的事件(标签加载成功)
+	window.onload = 函数
+	
+	2.鼠标事件
+	onclick - 点击
+	onmouseover
+	onmouseout
+	...
+	
+	3.键盘事件
+	onkeypress - 按下弹起
+	onkeydown
+	onkeyup
+	
+	4.输入框内容改变
+	onchange - 输入框输入状态结束
+	
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//1.在页面加载完成后才去获取节点
+			window.onload = function(){
+				var pNode = document.getElementById('p1')
+				console.log(pNode)
+				
+				//点击事件
+				pNode.onclick = function(){
+					alert('被点击!');
+				}
+				
+				//鼠标进入事件
+				pNode.onmouseover = function(){
+					this.innerText = '鼠标进入';
+					this.style.backgroundColor = 'red';
+				}
+				
+				//鼠标移出事件
+				pNode.onmouseout = function(){
+					this.innerText = '输入移出';
+					this.style.backgroundColor = 'white';
+				}
+				//鼠标按下事件
+				pNode.onmousedown = function(){
+					this.innerText = '鼠标按下';
+				}
+				pNode.onmouseup = function(){
+					this.innerText = '鼠标弹起';
+				}
+				
+				pNode.onmousewheel = function(){
+					this.innerText = '鼠标滚动';
+					console.log('鼠标滚动')
+				}
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<p id="p1" style="height: 200px;">我是段落</p>
+		<textarea name="" rows="4" cols="100"></textarea>
+		<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1544525699572&di=6bd446b73556fbdfd6407aaf22f428ee&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fa%2F5842337e52dde.jpg"/>
+	</body>
+</html>
+<script type="text/javascript">
+	var textareaNode = document.getElementsByTagName('textarea')[0]
+	textareaNode.onkeypress = function(evt){
+		//键盘事件对象: key属性 - 按键的值, keyCode属性 - 按键的值的编码
+		console.log(evt);
+	}
+	
+	textareaNode.onchange = function(evt){
+		alert('onchange事件')
+	}
+</script>
+
+

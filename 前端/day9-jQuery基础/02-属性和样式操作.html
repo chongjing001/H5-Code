@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				height: 500px;
+				width: 100px;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.min.js">
+			
+		</script>
+		
+		<script type="text/javascript">
+			//属性
+			//标签.attr(属性名) - 获取指定的属性值
+			//标签.attr(属性名，值) - 修改或添加属性
+			$(function(){
+				var text1 = $('#img1').attr('src')
+				console.log(text1)
+				
+				$('img').attr('title','图一')
+			
+			//2.标签内容属性
+			
+			console.log($('p').html())//去完整代码
+			console.log($('p').text())//取文字部分
+			console.log($('input').val()) //单标签中的val属性
+			
+			$('p').html('我是新的的段落')
+			$('input').val('请输入用户名')
+			
+			
+			//3.class属性 - HTML中一个标签可以有多个class值，多个值用空格隔开
+			
+			//标签.addClass（class值） - 给标签添加class值
+			//标签.removeClass(class值) - 移除标签中指定的class值
+			
+			
+			//4.样式属性
+			//标签.css(样式属性名) - 获取样式属性值
+			var height = $('p').css('height')
+			console.log(height)
+			
+			//标签.css(样式属性名，值) - 修改
+			
+			$('p').css('background-color','greenyellow')
+			
+			//标签。css({属性名1：值1，属性名2：值2...}) - 同时设置多个属性
+			$('p').css({
+				"color":"red",
+				"font-size":"25px"
+				
+			})
+			
+			//5.事件
+			//a.标签.on(事件名，回调函数) - 给的标签绑定事件，调用函数
+			$('a').on('mouseover',function(){
+				console.log(this)
+				//this为js对象，可以直接使用js对象的属性和方法
+				//$(this) - jQuery对象，可以直接使用jQuery对象的属性和方法
+				
+				//$(js对象) - 将js对象转化成jQuery对象
+				$(this).text('你再点一下')
+				
+				});
+			//b.父标签.on(事件名，选择器，回调函数) - 在父标签添加事件传递给选择器对应的子标签
+			//选择器 - 前面标签的后代标签（子标签/子标签的子标签）
+			
+			})
+			
+			
+		</script>
+	</head>
+	<body>
+		<p>我是段落</p>
+		<a href="">点我</a>
+		<img src="img/pwd-icons-new.png" id="img1"/>
+		<input type="text" name="" id="" value="请输入..." />
+		
+	</body>
+</html>

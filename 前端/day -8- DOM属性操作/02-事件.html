@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#div{
+				
+
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1" style="width: 200px; height: 200px; background-color: aqua;">
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	//1.事件三要素
+	//事件源：
+	//事件：
+	//事件驱动程序：
+	//2.绑定事件
+	/*
+	 * 第一步：获取事件源
+	 * 第二部：绑定事件
+	 * 第三部：写驱动程序
+	 */
+	//a.在标签内部给标签源的事件属性赋值
+	//<标签 事件属性 = '驱动程序'><标签>
+	//<标签 事件属性 = '函数名()'><标签>
+	
+	//b.通过节点绑定事件()
+	//标签节点.时间属性 = 函数
+	
+	
+	
+	//3.获取事件对象
+	//当事件的驱动程序是一个函数的时候，函数中可以设置一个函数
+	var div1Node = document.getElementById('div1');
+	div1Node.onclick = function(evt){
+		//参数evt就是事件对象
+		console.log(evt)
+		console.log(evt.offsetX)
+		if(evt.offsetX < 100){
+			this.style.backgroundColor = "red"
+		}
+		else{
+			this.style.backgroundColor = 'greenyellow'
+		}
+		
+	}
+	
+	
+</script>

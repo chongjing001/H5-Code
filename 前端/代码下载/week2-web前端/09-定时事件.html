@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="time">0</p>
+		<button onclick="clearBoom()">拆炸弹!</button>
+	</body>
+</html>
+<script type="text/javascript">
+	//1.
+	//setInterval(函数,时间) -  每隔指定的时间调用一次函数，时间单位是毫秒;返回定时 
+	//clearInterval(定时对象) - 停止定时
+	//1000毫秒 = 1秒
+	var pNode = document.getElementById('time')
+	var num = 0
+	//开始定时
+	var interval1 = window.setInterval(function(){
+		//这个里面的代码每个1秒会执行一次
+		num ++
+		//console.log(num)
+		pNode.innerText = num
+		
+		if(num == 10){
+			//停止指定的定时
+			window.clearInterval(interval1)
+		}
+	}, 1000)
+	
+	//2.
+	//setTimeout(函数,时间) - 隔指定的时间调用一次函数(函数只会调用一次，就像定时炸弹)
+	//clearTimeout(定时对象) - 停止定时
+	var message = '爆炸!!!!!!!!!!!'
+	var timeout1 = window.setTimeout(function(){
+		console.log(message)
+	}, 10000)
+	
+	function clearBoom(){
+		//
+		window.clearTimeout(timeout1)
+		console.log('炸弹被拆除')
+	}
+	
+	
+	
+	
+</script>

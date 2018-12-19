@@ -1,0 +1,82 @@
+<script type="text/javascript">
+	//1.函数的声明
+	/*
+	 * function 函数名(参数列表){
+	 * 		函数体
+	 * }
+	 * js中的函数除了声明的关键字不一样，其他的都一样
+	 */
+	//参数可以设置默认值, 也可以通过关键字参数来调用函数
+	function sum(num1, num2=3){
+		console.log('求两个数的和')
+		return num1+num2
+	}
+	
+	//2.函数的调用
+	/*
+	 * 函数名(实参列表)
+	 */
+	console.log(sum(10, 20))
+	console.log(sum(10))
+	console.log(sum(num1=100, num2=200))
+	
+	//js中所有的函数都有返回值，默认是undefined
+	function func1(){
+		console.log('我是js函数')
+	}
+	re = func1()
+	console.log(re)  
+	
+	//3.匿名函数(函数的字面量)
+	/*
+	 * 函数名 = function(参数列表){函数体}
+	 */
+	func2 = function(a,b){
+		console.log(a, b)
+		return a*b
+		
+	}
+	console.log(func2(3, 4))
+	
+	funcs_arr = [func1, function(a){console.log(a)}]
+	funcs_arr[0]()
+	funcs_arr[1]('abc')
+
+	//4.变量的作用域
+	/* a.全局变量: 只要声明在函数外面的变量就是全局变量; 在函数中以‘变量名=值’的形式声明的变量也是全局的
+	 * 
+	 * b.局部变量: 以var关键字声明在函数中的变量，才是局部变量
+	 */
+	var1 = 1000   //这是一个全局变量
+	var var2 = 'abc'  //这是一个全局变量
+	
+	for(xxx in 'hello'){
+		
+	}
+	
+	function abc(){
+		var2 = 'abcabc'
+		var3 = 111    //这个是一个全局变量
+		var var4 = 222  //这是一个局部变量
+		console.log(var1, var2, xxx)
+	}
+	abc()
+	
+	console.log(var3)
+	console.log(var2)
+	
+	
+	
+
+</script>
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

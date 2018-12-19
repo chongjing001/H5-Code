@@ -1,0 +1,67 @@
+<!--
+	Ajax(由jQuery封装的) - asynchronous javascript + xml(异步js+xml)
+	一般用来做网络数据请求，类似python中requests库(http请求)
+	
+	语法：
+	1.get请求
+	$.get(url,data,回调函数,返回数据类型)  
+	- url：请求地址（字符串）
+	- data：参数列表 (对象)
+	- 回调函数：请求成功后自动调用的函数(函数名，匿名函数)
+	- 返回数据类型：请求到的数据的格式(字符串，例如：'json')  
+	
+	2.post请求
+	$.post(url,data,回调函数,返回数据类型)  
+	- url：请求地址（字符串）
+	- data：参数列表 (对象)
+	- 回调函数：请求成功后自动调用的函数(函数名，匿名函数)
+	- 返回数据类型：请求到的数据的格式(字符串，例如：'json')  
+	
+	3.ajax
+	$.ajax({
+		'url':请求地址,
+		'data':{参数名1:值1, 参数名2:值2}，
+		'type':'get'/'post',
+		'dataType':返回数据类型,
+		'success':function(结果){
+			请求成功后要做的事情
+		}
+	})
+	
+-->
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		
+	</head>
+	<body>
+		<button>刷新</button><br />
+		<!--1.get请求-->
+		<script type="text/javascript">
+			//1.请求数据
+			var page = 1;
+			function getData(){
+				var url = 'https://www.apiopen.top/satinApi'
+				page++
+				$.get(url, {'type':'2', 'page':page}, function(re){
+					//re就是请求结果
+	//				console.log(re)
+					var allData = re.data;
+					for(var x in allData){
+						var data = allData[x];
+						var bimageuri = data.profile_image;
+						var imgNode = $('<img style="width: 100px; height: 100px;"/>').attr('src', bimageuri)
+						$('body').append(imgNode)
+					}
+				});
+			}
+			//2.刷新
+			$('button').on('click',getData);
+			
+		</script>
+	</body>
+</html>

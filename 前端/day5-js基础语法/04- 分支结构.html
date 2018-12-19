@@ -1,0 +1,109 @@
+<script type="text/javascript">
+	/*
+	 * if 和 switch
+	 * 
+	 * 1 .if 语句
+	 *  a. if
+	 * if(条件语句){
+	 * 	满足条件会执行的代码
+	 * }
+	 * b. if-else
+	 * if(条件语句){
+	 * 	  代码段1
+	 * }
+	 * else{
+	 * 	   代码段2
+	 * }
+	 * 
+	 * c. if-else if - else
+	 * if(条件语句1){
+	 * 	     代码段1
+	 * }
+	 * else-if(条件语句2){
+	 * 	     代码段2
+	 * }
+	 * else-if(条件语句3){
+	 * 	     代码段3
+	 * }
+	 * ...
+	 * else{
+	 * 	     代码段4
+	 * }
+	 * 执行过程和python一模一样
+	 * 
+	 * 2.switch语句
+	 * a.结构：
+	 * switch(表达式){
+	 * 	    case  值1:
+	 *              代码段1
+	 *     case  值2:
+	 *              代码段2
+	 *      ...
+	 *     default:
+	 *              代码段3
+	 * }
+	 * b.执行过程：
+	 * 使用表达式的值依次和后面每个case后面的值进行相比，看是否相等
+	 * 找到的一个和表达式的值相等的case，将这个case作为入口，依次执行后面
+	 * 的所有代码，直到执行完成或者遇到break为止，如果每个case的值和表达式的值
+	 * 不相等，就执行default后面的代码
+	 * 注意：case后面必须是一个有结果的表达式
+	 */
+	
+	num = 8
+	if(num % 2){
+		console.log('奇数{0}',(num))
+	}
+	else{
+		console.log('偶数')
+	}
+	
+	a = 10
+	switch(a){
+		case 5 :console.log('表达式1')
+		case 6 :console.log('表达式2')
+		case 10 :console.log('表达式3')
+		case 23 :console.log('表达式4')
+		case 'abc' :console.log('表达式5')
+		case  true:console.log('表达式6')
+		default:console.log('=======')	
+	}
+	//练习：用一个变量保存分制的成绩，根据成绩打印情况：0~5不及格，6及格 7~良好 9~10优秀
+	
+	
+	score = 9
+	switch(score){
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:console.log('不及格')
+		break
+		case 6:console.log('及格')
+		break
+		case 7:
+		case 8:console.log('良好')
+		break
+		case 9:
+		case 10:console.log('优秀')
+		break
+		
+//		default:console.log('====')
+	}
+	
+	
+	
+	
+	
+	
+</script>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

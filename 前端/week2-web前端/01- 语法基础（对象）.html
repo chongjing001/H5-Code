@@ -1,0 +1,103 @@
+<script type="text/javascript">
+//	1.什么是对象  - 和python中的对象一样,有对象属性和对象方法
+//	2.创建对象
+//	  a.创建字面量
+	  
+	  
+	  
+	  
+//	  b.通过构造方法创建对象
+//	    声明构造方法(类似python声明类) - 声明一个函数,使用函数名来模拟类名
+//	     在函数中通过this关键字来添加对象属性和对象方法
+//	      构造方法的函数名,首字母大写
+//	  this类似python中的self
+	
+	/*
+	 * 对象 = new 构造方法（）
+	 */
+	//c.函数中的this关键字
+	//当调用函数的时候前面加关键字new，就是把这个函数当成构造函数创建对象
+	//函数中的this就是对象
+	//直接调用函数的时候，函数中的this是window对象
+	
+    /*
+     * 3.使用对象属性
+     * 
+     * a.对象.属性
+     * b.对象[属性名]
+     * c.
+     */
+	function Person(){
+		//添加对象属性
+		this.name = '小李'
+		this.age = 18
+		this.gender = '男'
+		this.eat = function(food){
+			console.log(this.name + '在吃' +food)
+		}
+		//返回对象
+		return this
+	}
+	//创建Person对象
+	p3 = new Person()
+	p4 = new Person()
+	console.log(p3, p4)
+	
+	
+	//使用对象
+	var t = 'age'
+	
+	p5 = new Person('张三', 20, '男')
+	console.log(p5.name)
+	console.log(p5['name'], p5[t])
+	p5.eat('Apple')
+	
+	/*
+	 * 4.修改对象属性的值
+	 * 对象.属性 = 值
+	 * 对象[属性名] = 值
+	 * 属性存在的时候是修改，不存在的时候是添加
+	 * 给对象添加属性自作用于一个对象，不影响其他对象
+	 */
+	
+	p5.name = '王五'
+	p5['age'] = 30
+	console.log(p5)
+	
+	p5.num = '101'
+	//构造方法名.prototype.属性 = 值 --- 给指定构造方法创建的所有对象添加对象属性
+	Person.prototype.aaa = '123'
+	console.log(p4, p5)
+	p5.aaa = 'abc'
+	console.log(p4.aaa, p5.aaa)
+	//用一个数组保存多个学生对象，要求学生对象中有姓名，年龄和成绩
+	//最后按所有学生按成绩进行排序
+	function Student(name,age,score){
+		this.name = name
+		this.age = age
+		this.score = score
+		
+		return this
+	}
+	s1 = new Student('小王', 20, 93)
+	s2 = new Student('李四', 23, 80)
+	s3 = new Student('王五', 25, 90)
+	student = [s1, s2, s3]
+	//sort方法排序后，原数组会改变，也会产生新的数组
+	newStudent = student.sort(function(a,b){
+		return a.score - b.score;
+	})
+	console.log(newStudent)
+	
+	
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+</html>

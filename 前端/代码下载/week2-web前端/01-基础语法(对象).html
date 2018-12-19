@@ -1,0 +1,135 @@
+
+<script type="text/javascript">
+	//1.什么是对象(Object) - 和Python中的对象一样，有对象属性和对象方法。
+	//2.创建对象
+	/* a.创建对象字面量
+	 * 对象字面量: {属性名1:属性值1, 属性名2:属性值1}
+	 * 注意：当属性值是普通值我们叫这个属性为对象属性；当属性值是函数这个属性就是对象方法
+	 */
+	p1 = {
+			name:'余婷', 
+			age:10, 
+			eat:function(){
+			console.log('吃饭!')
+			}
+		}
+	p2 = {
+			name:'小明', 
+			age:18, 
+			eat:function(){
+			console.log('吃饭!')
+			}
+		}
+	
+	/* b.通过构造方法创建对象
+	 * 声明构造方法（类似python声明类）
+	 * - 声明一个函数，使用函数名来作为类名，在函数中通过this关键字来添加对象属性和对象方法
+	 * - 构造方法的函数名，首字母大写
+	 * - this类似python中的self
+	 * 通过构造方法创建对象
+	 * - 对象 = new 构造方法()
+	 */
+	function Person(name1='张三', age1=18, sex1='男'){
+		//添加对象属性
+		this.name = name1
+		this.age = age1
+		this.sex = sex1
+		//添加对象方法
+		this.eat = function(food){
+			console.log(this.name+'在吃'+food)
+		}
+		//返回对象
+		return this
+	}
+	
+	//创建Person的对象
+	p3 = new Person()
+	p4 = new Person('小明')
+	//使用对象属性和方法
+	console.log(p3, p4, p3===p4, p3.age, p4.name)
+	p4.eat('苹果')
+	
+	
+	//调用函数，获取返回值
+	win1 = Person()
+	console.log(win1)
+	win1.alert('我是window')
+	
+	// c.函数中this关键字
+	/* 当调用函数的时候前面加关键字new,就是这个函数当成构造函数创建对象，函数中的this就是当前对象;
+	 * 直接调用函数的时候，函数中的this是window对象 
+	 */
+	//3.使用对象属性（获取属性值）
+	/*
+	 * a. 对象.属性  - p5.name
+	 * b. 对象[属性名]
+	 */
+	var t = 'age'
+	p5 = new Person('小花', 20, '女')
+	console.log(p5.name)
+	console.log(p5['name'], p5[t])
+	p5.eat('面条')
+	
+	//4.修改对象属性的值
+	/* 属性存在的时候是修改，不存在的时候就是添加
+	 * 对象.属性 = 值
+	 * 对象[属性名] = 值
+	 */
+	//修改属性值
+	p5.name = '小红'
+	console.log(p5)
+	p5['age'] = 30
+	console.log(p5)
+	
+	//添加属性
+	p5.num = '100222'
+	p5['num2'] = '110222'
+	console.log(p5)
+	
+	//给对象添加属性只作用于一个对象,不影响其他对象
+	console.log(p4)
+	
+	//构造方法名(类名).prototype.属性 = 值  --- 给指定构造方法创建的所有的对象都添加指定的属性
+	Person.prototype.aaa = '123'
+	p6 = new Person()
+	p6.aaa = 'abc'
+	console.log(p6.aaa)
+	
+	console.log(p5.aaa)
+	
+	//给String类型添加方法
+	String.prototype.ytIndex = function(x){
+		return this[x]
+	}
+	str1 = new String('abcdef')
+	console.log(str1.ytIndex(0))
+	console.log('hello'.ytIndex(3))
+	
+	//练习：用一个数组保存多个学生对象，要求学生对象中有姓名，年龄和成绩。最后所有学生按成绩进行排序
+	function Student(name, age, score){
+		this.name = name;
+		this.age = age;
+		this.score = score;
+		
+		return this;
+	}
+	students = [new Student('小明', 18, 90), new Student('小红', 20, 78), new Student('小花', 19, 98)];
+	//sort方法排序后，原数组会改变，也会产生新的数组
+	newStudents = students.sort(function(a,b){
+		return a.score - b.score;
+	});
+	console.log(newStudents, students)
+	
+
+	
+</script>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<style type="text/css">
+	body{text-align: center;}
+	.div{
+		margin:0 auto;
+	}
+	font{}
+	#result{
+		color: red;
+	}
+	input:active{
+		color: darkgreen;
+	}
+	h2:hover{
+		font-size: xx-large;
+		color: deepskyblue;
+	}
+</style>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>入学信息登记</title>
+		<link rel="icon" type="image/ico" href="img/aaa.ico"/>
+	</head>
+	<body>
+		<div class="div">
+			<table width="500" height="20" bgcolor="blue"></table>
+			<table width="500" height="500" bgcolor="blue" cellspacing="3" cellpadding="">
+				<tr bgcolor="white">
+					<td>
+						<br />
+						<h2 align="center">入学登记</h2>
+						<table width="480" height="450" bordercolor="darkgray" cellspacing="1" cellpadding="">
+							<tr bgcolor="white">
+								<td>
+									&emsp;&emsp;
+								<font>学号：</font> <textarea name="" rows="1" cols="10"></textarea>
+								&emsp;&emsp;&emsp;&emsp;&emsp;
+								<font>性别：</font>
+								<font>男</font><input type="radio" name="gender"  value="man" checked="checked" />
+								<font>女</font><input type="radio" name="gender"  value="woman" />
+								<br /><br />
+								&emsp;&emsp;
+								<font>姓名：</font><textarea maxlength="5" name="" rows="1" cols="10"></textarea>
+								&emsp;&emsp;&emsp;&emsp;&emsp;
+								<font>班级：</font> 
+								<select name="">
+									<option value="1">01</option>
+									<option value="2">02</option>
+									<option value="3">03</option>
+									<option value="4">04</option>
+									<option value="5">05</option>
+									<option selected="selected" value="6">06</option>
+									<option value="7">07</option>
+									<option value="8">08</option>
+									<option value="9">09</option>
+									<option value="10">10</option>
+								</select>
+								<br /><br />
+								<font>出生年月：</font><input /><font>&emsp;例如：2000-6-6</font><br /><br />
+								<font>家庭住址：</font><textarea name="" rows="1" cols="10"></textarea><br /><br />
+								<font>邮政编码：</font><input /> <font>&emsp;分类：</font>
+								<select name="">
+									<option value=""></option>
+								</select><br /><br />
+								<font>联系电话：</font><input /><br /><br />
+								<font>入学时间：</font><input /><br /><br />
+								<font>备注：&emsp;&emsp;</font><textarea name="" rows="4" cols="50"></textarea><br /><br />
+								&emsp;&emsp;&emsp;&emsp;
+								<input type="submit" name="" id="result" value="确定" />&emsp;&emsp;&emsp;&emsp;
+								&emsp;&emsp;
+								<input type="reset" name="" id="result" value="重置" />
+								&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+								<input type="submit" name="" id="result" value="取消" />
+									
+								
+								
+								</td>
+							</tr>
+							
+						</table>
+						
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

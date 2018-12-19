@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			#box1{
+				width: 400px;
+				height: 150px;
+				background-color: lightcyan;
+				margin-left: auto;
+				margin-right: auto;
+				border: 2px dotted lightgrey;
+				display: none;
+			}
+			#box1 p{
+				line-height: 70px;
+				margin-left: 20px;
+			}
+			#box1 font{
+				position: absolute;
+				right: 20px;
+				bottom: 15px;
+				color: darkslateblue;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="showBox()">进入百度</button>
+		<div id="box1">
+			<p>5s后自动跳转到百度...</p>
+			<!--<a href="http://www.baidu.com", target="_blank">马上跳转</a>-->
+			<font onclick="jump()">马上跳转</font>
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var box1Node = document.getElementById('box1');
+	var pNode = box1Node.firstElementChild;
+	function showBox(){
+		if(box1Node.style.display == 'block'){
+			return
+		}
+		//显示提示框
+		box1Node.style.display = 'block';
+		//开始倒计时
+		var time = 5;
+		interval1 = window.setInterval(function(){
+			time--;
+			pNode.innerText = time+'s后自动跳转到百度...'
+			
+			if(time === 0){
+				//停止定时
+				window.clearInterval(interval1)
+				//打开网页
+				window.open('https://www.baidu.com')
+				//隐藏提示框
+				box1Node.style.display = 'none'
+				pNode.innerText = '5s后自动跳转到百度...'
+			}
+			
+		}, 1000);
+	}
+	
+	function jump(){
+		//停止定时
+		window.clearInterval(interval1)
+		//打开网页
+		window.open('https://www.baidu.com')
+		//隐藏提示框
+		box1Node.style.display = 'none'
+		pNode.innerText = '5s后自动跳转到百度...'
+	}
+</script>

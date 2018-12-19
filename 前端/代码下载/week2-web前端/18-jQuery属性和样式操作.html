@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				//1.普通属性的获取和修改 - 除了innerHTML,innerText以及value
+				//标签.attr(属性名)  - 获取指定的属性值
+				//标签.attr(属性名, 值) - 修改/添加属性
+				var text1 = $('img').attr('src')   // 获取属性的值的时候只获取被选中标签中的第一个标签
+				console.log(text1)
+				console.log($('a').attr('href'))   
+				$('img').attr('title', '图片1')  // 修改和添加会针对所有选中的标签 
+				
+				//2.标签内容属性
+				// 双标签.html()
+				// 双标签.text()
+				// 单标签.val()
+				//注意：上面的函数不传参就是获取值，传参就是修改值
+				console.log($('p').html())   // 取完整代码
+				console.log($('p').text())   // 只取文字
+				console.log($('input').val()) //单标签中的val属性
+				$('p').html('我是新的段落')    //
+				$('input').val('请输入账号')
+				
+				//3.class属性 - HTML中一个标签可以有多个class值，多个值用空格隔开
+				//标签.addClass(class值) - 给标签添加class值
+				//标签.removeClass(class值) - 移除标签中指定的class值
+				$('div').addClass('w')
+				$('#div1').removeClass('c')
+				
+				//4.样式属性
+				//a.获取属性值
+				//标签.css(样式属性名) - 获取样式属性值
+				var height = $('p').css('height')
+				console.log(height)
+				//b.修改和添加
+				//标签.css(样式属性名, 值) - 修改属性值
+				$('p').css('background-color', 'cornflowerblue')
+				//标签.css({属性名:值, 属性名2:值2...}) - 同时设置多个属性
+				$('p').css({
+					"color":"yellow",
+					'font-size':'30px'
+				})
+				
+
+				//5.事件
+				//a.标签.on(事件名,回调函数) - 给标签绑定指定的事件（和js中的addEventLinsenner一样）
+				//事件名不需要要on
+				$('button:first').on('mouseover',function(){
+					console.log(this)
+					//注意: this - js对象, 可以直接js对象的属性和方法
+					//     $(this) - jQuery对象，可以使用jQuery对象的属性和方法
+					// $(js对象) - 将js对象转换成jQuery对象
+					//this.innerText = '进入！'
+					$(this).text('进入~')
+				});
+				
+				//b.父标签.on(事件名,选择器,回调函数) - 在父标签上添加事件，传递给选择器对应的子标签
+				//选择器 - 前面标签的后代标签(子标签/子标签的子标签)
+				$('#v01').on('click','.v011 .v0111',function(){
+					console.log(this)
+				})
+			})
+			
+		</script>
+		<style type="text/css">
+			
+			.b{
+				background-color: yellowgreen;
+			}
+			.c{
+				color: red;
+				
+			}
+			.h{
+				height: 100px;
+			}
+			.w{
+				width: 200px;
+				/*background-color: skyblue;*/
+			}
+			p{
+				height: 50px;
+			}
+			
+			#v01, #v02{
+				width: 800px;
+				height: 200px;
+				background-color: yellow;
+			}
+			#v02{
+				background-color: salmon;
+			}
+			.v011{
+				width: 100px;
+				height: 100px;
+				background-color: seagreen;
+				margin-top: 10px;
+				display: inline-block;
+			}
+			
+			
+		</style>
+		
+		
+		
+		
+	</head>
+	<body>
+		<div id="v01">
+			<div class="v011">
+				div1
+				<div class="v0111" style="width: 50px; height: 50px; background-color: skyblue;">
+					
+				</div>
+			</div>
+			<div class="v011">
+				div2
+			</div>
+			<div class="v011">
+				div3
+			</div>
+		</div>
+		<div id="v02">
+			
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				
+			})
+		</script>
+		
+		<button>修改</button>
+		<div id="div1" class="b c">
+			div1
+		</div>
+		<div id="" class="c h">
+			div2
+		</div>
+		<div id="" class="b h">
+			div3
+		</div>
+		<p style="width: 300px;>我是段落<a href="">哈哈</a></p>
+		<a href="http://www.baidu.com">我是超链接</a>
+		<img src="img/a1.jpg" id="img1"/>
+		<input type="text" name="" id="" value="请输入...." />
+		<img src="img/slide-1.jpg"/>
+		<img src="img/picture-1.jpg"/>
+		<input type="text" name="" id="" value="=====" />
+	</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				border: 0;
+				padding: 0;
+			}
+			.fruit{
+				width: 150px;
+				height: 50px;
+				background-color: chartreuse;
+				position: relative;
+				text-align: center;
+				line-height: 50px;
+				margin-bottom: 10px;
+				margin-left: 50px;
+			}
+			.font{
+				position: absolute;
+				right: 15px;
+				color: white;
+			}
+			/*#top{
+				width: 200px;
+				height: 500px;
+				background-color: burlywood;
+			}*/
+			#bottom{
+				width: 200px;
+				height: 50px;
+				/*background-color: darkkhaki;*/
+			}
+			#bottom #text{
+				border: none;
+				outline: none;
+				border-bottom: 1px solid red;
+				text-align: center;
+			}
+			#bottom button{
+				width: 40px;
+				height: 30px;
+				color:white;
+				background-color: red;
+				text-align: center;
+				line-height: ;
+				float: right;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="top">
+			
+		</div>
+		<div id="bottom">
+			<input type="text" placeholder="请输入..." />
+			<button>添加</button>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var fruitArray = ['香蕉', '苹果', '草莓', '火龙果'];
+	for(var x in fruitArray){
+		var fruitName = fruitArray[x];
+		//创建标签对象
+		var fruitNode = $('<div class="fruit">'+fruitName+'</div>')
+		
+		fruitNode.append('<font class="font">X</font>')
+//		console.log('======================')
+//		console.log($('#top'))
+		$('#top').append(fruitNode)
+	}
+	
+	
+	$('#bottom button').on('click',function(){
+		//获取输入框中的内容
+		var newName = $('#bottom input').val();
+		newNode = $('<div class="fruit"></div>').text(newName)
+		//添加
+		newNode.append('<font class="font">X</font>')
+		
+		$('#top').prepend(newNode)
+		
+	})
+	
+	//删除
+	$('#top').on('click','font',function(){
+		$(this).parent().remove()
+	})
+	
+	console.log('=====',$('#bottom input'))
+	
+	
+</script>

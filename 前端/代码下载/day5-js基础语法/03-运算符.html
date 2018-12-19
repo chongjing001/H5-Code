@@ -1,0 +1,81 @@
+<script type="text/javascript">
+	//1.数学运算符: +, -, *, /, %, ++, --
+	/* 前面四个运算符和python一模一样
+	 * 
+	 * ++， --都是单目运算符，使用方式：变量++/--, ++/--变量
+	 * a. ++ - 自加1运算;让变量本身的值加1
+	 * b. -- - 自减1运算；让变量本身的值减1
+	 */
+	num = 10
+	num++
+	console.log(num)   // 11
+	++num 
+	console.log(num)   // 12
+	num--
+	console.log(num)   // 11
+	--num
+	console.log(num)   //10
+	
+	
+	// 坑：用一个变量单独使用++/--的时候,++/--放前面和放后面效果一样；
+	//    如果是使用++/--运算的结果给另个变量赋值，++/--放前面是先自加/自减再赋值，
+	//    ++/--放后面是先赋值再自加/自减
+	num2 = 10
+	num = ++num2   // 相当于：num2 += 1;  num = num2
+	console.log(num, num2)  // 11  11
+	
+	num2 = 10
+	num = num2++   // 相当于：num=num2; num2 += 1
+	console.log(num, num2)  // 10   11
+	
+	//2.比较运算符: >, <, ==, !=, >=, <=, ===, !==
+	// 结果是布尔值
+	// 比较大小的和python一样
+	// a. ==：判断值是否相等(相等)
+	// b. ===：判断值和类型是否相等(全完相等) ,相当于python中的==, !==相当于python中的不等
+	console.log(5 == 5)    //true
+	console.log(5 == '5')  //true
+	console.log(5 != 5)    //false
+	console.log(5 != '5')  //false
+	
+	console.log(5 === 5)   //true
+	console.log(5 === '5')  //flase
+	console.log(5 !== 5)    //false
+	console.log(5 !== '5')  //true
+	
+	//3.逻辑运算符:&&(逻辑与)、||(逻辑或)、!(逻辑非)
+	//运算规则和使用方式和python的逻辑运算一模一样
+	console.log('=================')
+	console.log(true && true)    	//true
+	console.log(true && false)		//false
+	console.log(false || true)		//true
+	console.log(false || false)		//false
+	console.log(!true)		//false
+	
+	//4.赋值运算符:=, +=, -=, *=, /=, %=
+	//和python一模一样
+	
+	//5.三目运算符 - ?:
+	//语法：
+	//条件语句?值1:值2 - 判断条件语句的值是否为true,为true整个表达式的结果是值1否则是值2
+	age = 16
+	is_man = age>=18 ? '成年' : '未成年'
+	console.log(is_man)
+	
+	//6.运算顺序
+	//数学>比较>逻辑>赋值
+	//如果有括号，先算括号里面的
+	
+	
+	
+</script>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

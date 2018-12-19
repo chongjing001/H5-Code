@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="http://www.baidu.com" id="baidu">百度</a>
+	</body>
+</html>
+<script type="text/javascript">
+	window.setInterval(function(){
+		var e = document.createEvent("MouseEvents");
+		e.initEvent("click", true, true);
+		document.getElementById("baidu").dispatchEvent(e);
+	},2000)
+</script>

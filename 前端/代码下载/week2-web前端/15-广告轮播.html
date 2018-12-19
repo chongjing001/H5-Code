@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#bigImg{
+				width: 500px;
+				height: 300px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="smallBox">
+		</div>
+		<div id="bigBox">
+			<img id="bigImg"/>
+		</div>
+		
+		<script type="text/javascript">
+			//0.获取节点
+			var smallBoxNode = document.getElementById('smallBox');
+			var bigBoxNode = document.getElementById('bigBox');
+			var bigImgNode = document.getElementById('bigImg');
+			
+			//1.获取数据源
+			var imgArray = [
+				{
+					name:'图一',
+					small_url:'img/thumb-1.jpg',
+					big_url:'img/picture-1.jpg'
+				},
+				{
+					name:'图二',
+					small_url:'img/thumb-2.jpg',
+					big_url:'img/picture-2.jpg'
+				},
+				{
+					name:'图三',
+					small_url:'img/thumb-3.jpg',
+					big_url:'img/picture-3.jpg'
+				}
+			];
+			//2.将数据展示在浏览器相应的位置
+			var currentSmallNode = null
+			for(var x in imgArray){
+				//根据小图创建节点
+				var imgObj = imgArray[x];
+				var smallImgNode = document.createElement('img');
+				if(x == 0){
+					smallImgNode.style.borderBottom = '1px solid red';
+					currentSmallNode = smallImgNode;
+					currentSmallNode.index = 0;
+				}
+				smallImgNode.src = imgObj.small_url;
+				//在节点对象中保存和节点相关的信息
+				smallImgNode.info1 = imgObj;
+				//添加节点
+				smallBoxNode.appendChild(smallImgNode);
+				//绑定事件
+				smallImgNode.onclick = function(){
+//					console.log(this.info1)
+					bigImgNode.src = this.info1.big_url;
+					//将之前选中的下边框去掉
+					currentSmallNode.style.border = 'none';
+					//选中谁就给谁加下边框
+					this.style.borderBottom = '1px solid red';
+					//更新当前节点的值
+					currentSmallNode = this;
+				}
+			}
+			
+			//3.大图默认显示
+			bigImgNode.src = imgArray[0].big_url;
+			
+//			var index = 0;
+			//4.定时事件
+			var inter1 = window.setInterval(function(){
+				var index = currentSmallNode.index;
+				var SmallImgNodeArray = smallBoxNode.children
+				index ++;
+				if(index == SmallImgNodeArray.length){
+					index = 0;
+				}
+				var smallImgNode = SmallImgNodeArray[index];
+				bigImgNode.src = smallImgNode.info1.big_url;
+				currentSmallNode.style.border = 'none';
+				smallImgNode.style.borderBottom = '1px solid red';
+				currentSmallNode = smallImgNode;
+				currentSmallNode.index = index;
+			}, 2000);
+			
+		</script>
+		
+	</body>
+</html>

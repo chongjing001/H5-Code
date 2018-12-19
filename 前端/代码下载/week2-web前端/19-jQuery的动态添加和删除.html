@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<style type="text/css">
+			.fruit{
+				width: 150px;
+				height: 50px;
+				background-color: green;
+				margin-bottom: 10px;
+				text-align: center;
+				line-height: 50px;
+				position: relative;
+			}
+			.fruit font{
+				position: absolute;
+				right: 15px;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+		</div>
+		<!--添加默认显示的水果标签-->
+		<script type="text/javascript">
+			var fruitArray = ['苹果','香蕉', '火龙果', '荔枝'];
+			for(var x in fruitArray){
+				//取水果名
+				var fruitName = fruitArray[x];
+				//创建标签对象
+				var fruitNode = $("<div class='fruit'>"+fruitName+"</div>")
+				fruitNode.append($('<font>×</font>'))
+				//添加标签
+				$('#top').append(fruitNode)
+			}
+		</script>
+		
+		<div id="bottom">
+			<input type="text" placeholder="水果" />
+			<button>添加</button>
+		</div>
+		
+		<!--添加新水果-->
+		<script type="text/javascript">
+			$('#bottom button').on('click',function(){
+				//获取输入框中的内容
+				var newName = $('#bottom input').val();
+				//创建新标签
+				var newNode = $('<div class="fruit"></div>').text(newName)
+				newNode.append($('<font>×</font>'))
+				
+				//添加
+				$('#top').prepend(newNode)
+			});
+			
+			//删除水果
+			$('#top').on('click', 'font',function(){
+				$(this).parent().remove();
+			})			
+			
+		</script>
+	</body>
+</html>

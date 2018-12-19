@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格~~</title>
+	</head>
+	<body>
+		<!--表格标签（table-tr-td）
+			table标签 - 代表着整个表格
+			tr标签 - 代表表格中的每一行
+			td - 代表表格中的每一个单元格
+			
+			1.border - 设置边框宽度（单位是相符）
+			设置整个表格的边框宽度border，同时设置每个单元格的边框宽度为1
+			
+			2.bordercolor - 设置边框颜色
+			html中的颜色值：
+			a.颜色的英语单词
+			b.rgb对应的16进制值，前加#，例如：#ff0000（红色） #00ff00（绿色）
+			
+			3.sellspacing - 设置表格中单元格和单元格之间，以及单元格与边框之间的间距
+			
+			4. cellpadding - 设置表格中的内容到单元格边框之间的间距
+			默认情况下，单元格的大小跟内容大小有关
+			
+			5.bgcolor - 设置背景颜色
+			作为table属性 - 设置整个表格的背景颜色
+			作为tr属性 - 设置一行的背景颜色
+			作为td属性 - 设置一个单元格的背景颜色
+			
+			6.width - 设置宽度
+			作为table属性 - 设置整个列表的宽度
+			作为td属性 - 设置当前那td所在列的宽度
+			
+			7.height - 设置高度
+			作为table属性 - 设置整个列表的高度
+			作为td属性 - 设置当前那td所在列的高度
+			
+			8.align - 设置水平对齐方式
+			letf（默认）- 左对齐
+			right - 右对齐
+			center - 居中
+			作为table属性 - 让整个表格在网页中左对齐、右对齐、居中
+			作为tr属性 - 让一行中所有单元格的内容，在单元格中左对齐、右对齐、居中
+			作为td属性 - 让一个单元格中的内容左对齐、右对齐、居中
+			
+			注意：html中所有属性的值都是在""中
+		-->
+		<table width="1000" height="500" border="1" bordercolor="yellow" cellspacing="0" cellpadding="50">
+			<!--第一行-->
+			<tr bgcolor="cadetblue">
+				<td width="100">姓名</td>
+				<td>性别</td>
+				<td>年龄</td>
+			</tr>
+			<tr>
+				<td>小李</td>
+				<td bgcolor="darkmagenta">男</td>
+				<td>23</td>
+			</tr>
+			<tr>
+				<td>王五</td>
+				<td>男</td>
+				<td>20</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>广告播放</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				border: 0;
+				padding: 0;
+				position: absolute;
+			}
+			#bg{
+				width: 800px;
+				height: 540px;
+				/*background-color: aqua;*/
+				position: relative;
+				left: 50%;
+				top: 50px;
+				
+				
+			}
+			#bg img{
+				width: 780px;
+				height: 490px;
+			
+			}
+			#ra1{
+				margin-top: 420px;
+				margin-left: 40%;
+			}
+			#ra2{
+				margin-top: 420px;
+				margin-left: 45%;
+			}
+			#ra3{
+				margin-top: 420px;
+				margin-left: 50%;
+			}
+			#ra4{
+				margin-top: 420px;
+				margin-left: 55%;
+			}
+			#ra5{
+				margin-top: 420px;
+				margin-left: 60%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="bg">
+			<img src="img/1.jpg"/>
+			<input type="radio" name="choose" id="ra1" value="" onclick="chooseImg(this)"/>
+			<input type="radio" name="choose" id="ra2" value="" onclick="chooseImg(this)"/>
+			<input type="radio" name="choose" id="ra3" value="" onclick="chooseImg(this)"/>
+			<input type="radio" name="choose" id="ra4" value="" onclick="chooseImg(this)"/>
+			<input type="radio" name="choose" id="ra5" value="" onclick="chooseImg(this)"/>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+//	num = 2
+	num2 = 1
+	window.setInterval(function(){
+		//自动点击
+		inputId = "ra"+String(num2)
+		var e = document.createEvent("MouseEvents");
+		e.initEvent("click", true, true);
+		document.getElementById(inputId).dispatchEvent(e);
+		num2++
+		if(num2 == 6){
+			num2 = 1
+		}
+		
+//		var imgNode = document.getElementsByTagName('img')[0]
+//		console.log(imgNode)
+//		imgNode.src = "img/"+String(num)+".jpg"
+//		num++
+//		if(num == 6){
+//			num = 1
+//		}
+		
+	},3000)
+	
+	function chooseImg(evt){
+//		console.log(evt)
+//		console.log(evt.id)
+		num1 = evt.id[2]
+		var imgNode = document.getElementsByTagName('img')[0]
+		imgNode.src = "img/"+num1+".jpg"
+	}
+	
+</script>

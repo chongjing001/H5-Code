@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--表格标签(table-tr-td)
+			table标签 - 代表整个表格
+			tr标签 - 代表表格中的每一行
+			td - 代表表格中的每一个单元格
+			
+			1.border - 设置边框宽度(单位是像素)
+			设置整个表格的边框宽度为border，同时设置每个单元的边框宽度为1
+			
+			2.bordercolor - 设置边框颜色
+			html中的颜色值：a.颜色的英语单词，例如：red, yellow, green, pink
+			               b.rgb对应的16进制值,前加#, 例如：#ff0000(红色)  #00ff00(绿色)  #0000ff(蓝色)
+			
+			3.cellspacing - 设置表格中单元格和单元格之间，以及单元格和边框之间的间距
+			
+			4.cellpadding - 设置表格中的内容到单元格边框之间的间距
+			默认情况下，单元格的大小跟内容的大小有关
+			
+			5.bgcolor - 设置背景颜色
+			作为table属性 - 设置整个表格的背景颜色
+			作为tr属性 - 设置一行的背景颜色
+			作为td属性 - 设置一个单元格的背景颜色
+			
+			6.width - 设置宽度
+			作为table属性 - 设置整个列表的宽度
+			作为td属性 - 设置当前td所在的列的宽度
+			
+			7.height - 设置高度
+			作为table属性 - 设置整个列表的高度
+			作为tr属性 - 设置一行的高度
+			
+			8.align - 设置水平对齐方式
+			letf(默认) - 左对齐
+			right - 右对齐
+			center - 居中
+			作为table属性 - 让整个表格在网页中左对齐、右对齐、居中
+			作为tr属性 - 让一行中所有的单元格中的内容，在单元格中左对齐、右对齐、居中
+			作为td属性 - 让一个单元格中的内容，在单元格中左对齐、右对齐、居中
+			
+			
+			注意：html中所有的属性值都是写在双引号里面
+		-->
+		<table align="center" height="600" width="1000" border="1" bordercolor="#0000ff" cellspacing="0" cellpadding="20" bgcolor="bisque">
+			<!--第一行-->
+			<tr align="center" height="50" bgcolor="salmon">
+				<td width="100">姓名</td>
+				<td>成绩</td>
+				<td>是否留级</td>
+			</tr>
+			<!--第二行-->
+			<tr>
+				<td><img src="img/luffy2.png"/></td>
+				<td bgcolor="seagreen">第二行第二列</td>
+				<td>第二行第三列</td>
+			</tr>
+			<!--第三行-->
+			<tr>
+				<td>第三行第一列</td>
+				<td align="right">第三行第二列</td>
+				<td>第三行第三列</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,133 @@
+
+/*===========通用=============*/
+*{
+	margin: 0;
+	padding: 0;
+}
+/*===========顶部=============*/
+#top{
+	height: 35px;
+	background-color: #e5e5e5;
+	position: relative;
+	/*内容居中*/
+	line-height: 35px;
+	/*border-top: 1px solid #d0d0d0;*/
+}
+/*======导航条基本设置======*/
+#top .left_nav, #top .righ_nav{
+	/*去掉列表前的符号*/
+	list-style: none;
+}
+#top li{
+	/*同时设置左右margin值是20px*/
+	margin: 0 10px;   
+	font-size: 13px;
+	color: #a0a0a0;
+	font-weight: 300;
+}
+/*左边导航条中所有的图片*/
+.left_nav img{
+	height: 20px;
+	/*图片在内容垂直方向居中*/
+	vertical-align: middle;
+}
+#top a, #top font{
+	/*垂直方向居中*/
+	vertical-align: middle;
+	/*字体*/
+	font-size: 13px;
+	color: #a0a0a0;
+	font-weight: 300;
+	text-decoration: none;
+	
+}
+/*=====导航条效果====*/
+#top .seleted_li{
+	/*width: 80px;
+	height: 35px;*/
+	margin:0;
+	position: relative;
+}
+#top .seleted_li .menu_top{
+	position: absolute;
+	height: 35px;
+	width: 80px;
+	padding:0 10px;
+}
+#top .seleted_li .menu_bottom{
+	position: absolute;
+	background-color: white;
+	height: 250px;
+	width: 350px;
+	top: 35px;
+	border-left: 1px solid #cccc;
+	border-right: 1px solid #cccc;
+	border-bottom: 1px solid #cccc;
+	display: none;
+}
+
+.seleted_li:hover .menu_top{
+	background-color: white;
+	border-left: 1px solid #cccc;
+	border-right: 1px solid #cccc;
+}
+#top .seleted_li:hover .menu_bottom{
+	/*background-color: yellow;*/
+	display: block;
+}
+/*城市标签样式*/
+.city{
+	margin: 0 10px;
+	float: left;
+	width: 50px;
+	height: 25px;
+	cursor: pointer;
+	text-align: center;
+	/*vertical-align: middle;*/
+	line-height: 25px;
+}
+#top .city:hover{
+	color: red;
+	background-color: #E5E5E5;
+}
+
+/*鼠标悬停在a标签上*/
+#top a:hover{
+	color: red;
+}
+
+/*竖线*/
+#top span{
+	float: left;
+	font-size: 10px;
+	font-weight: 100;
+	color: #cccc;
+}
+
+/*=====左边的导航条====*/
+#top .left_nav{
+	position: absolute;
+	left: 150px;
+}
+#top .left_nav li{
+	float: left;
+}
+
+/*=======右边的导航条=====*/
+#top .righ_nav{
+	position: absolute;
+	right: 150px;
+}
+#top .righ_nav li{
+	float: left;
+}
+
+
+
+
+
+/*===========底部=============*/
+#bottom{
+	height: 700px;
+	background-color: seagreen;
+}

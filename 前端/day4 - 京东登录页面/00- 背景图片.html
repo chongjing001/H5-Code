@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#bg{
+				/*1.设置背景图
+				 将指定图片作为当前标签的背景*/
+				background-image: url(img/pygame.png);
+				
+				/*
+				 2.背景图是否平铺
+				 repeat（默认） - 当背景图比标签小的时候，背景图会重复渲染，直到标签全部铺满位置
+				 no-repeat - 背景只渲染一次
+				 * */
+				background-repeat: no-repeat;
+				
+				/*
+				 3.背景图的位置
+				 数值 - x、y坐标的值
+				 left
+				 right
+				 center
+				 * */
+				background-position-x: 300px;
+				background-position-y: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="bg" style="width: 600px; height: 500px; background-color: #B8860B;">
+			
+		</div>
+	</body>
+</html>

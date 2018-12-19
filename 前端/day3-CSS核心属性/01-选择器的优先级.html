@@ -1,0 +1,37 @@
+<!--
+	优先级
+	每种选择器都有一个权重值，权重值越大，优先级越高
+	权重值一样的时候谁后写谁的优先级越高
+	标签选择器：0001（1）
+	class选择器：0010（2）
+	id选择器：  0100（4）
+	群组选择器：单独看每个选择器的权重
+	后代选择器：每个单独的选择器的权重和
+	
+	内联样式表的优先级永远最高
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#a1{
+				color: red;
+			}
+			.ca1{
+				color: yellow;
+			}
+			a{
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div2">
+				<a href="" class="ca1" id="a1">百度一下</a>
+			</div>
+		</div>
+	</body>
+</html>

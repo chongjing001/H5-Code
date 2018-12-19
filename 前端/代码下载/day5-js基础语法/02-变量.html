@@ -1,0 +1,53 @@
+<script type="text/javascript">
+	//1.变量的声明
+	/* 语法1：变量名 = 值
+	 * 变量名 - 标识符,不能是关键字; 
+	 *         驼峰式命名(第一个单词首字母小写，后面每个单词首字母大写);见名知义
+	 * 
+	 * 语法2：var 变量名 = 值  或 var 变量名
+	 * var - 声明变量的关键字
+	 * 
+	 * 区别：声明的时候加var，变量可以不用赋值，默认是undefined;不加var就必须赋值，否则报错
+	 * 
+	 * 补充:js中两个特殊的值 - undefined(没有，空)和null(清空)
+	 * 
+	 */
+	name = 123
+	console.log(name)
+	
+	var age = 10
+	var sex  // 通过var声明变量的时候如果不赋值，默认是undefined
+	console.log(age, sex)
+	
+	//重新给变量赋值
+	name = '小明'
+	age = 18
+	sex = '男'
+	console.log(name, age, sex)
+	
+	//同时声明多个变量,赋一样的值
+	a1 = a2 = a3 = 10
+	console.log(a1, a2, a3)
+	
+
+	//同时声明多个变量，赋不同的值
+	b1=1, b2=2, b3=3
+	var b1=1, b2=2, b3=3
+	console.log(b1, b2, b3)
+	
+	
+	
+	
+	
+	
+</script>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>变量</title>
+	</head>
+	<body>
+	</body>
+</html>

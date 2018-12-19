@@ -1,0 +1,107 @@
+<!--
+	1.标准流
+	  块级 - 
+	  行内 -
+	  行内块 -
+	 2. display：修改标签类型
+	    block
+	    inline
+	    inline-block
+	    
+	3.脱标（脱流） - 浮动、定位
+	一行可以显示多个，默认大小伟内容大小，设置宽高有效
+	
+	4.浮动（float）
+	left - 左浮动
+	right - 右浮动
+	a.文字环绕 
+	b.清除浮动 - 清除因为浮动而产生的高度塌陷问题（父标签不浮动，子标签浮动）
+	                     高度塌陷的父标签{overflow：hidden}
+	
+	5.定位
+	a.距离 - left，right，top，bottom
+	b.设置参考对象 - position
+	  initial/static（默认）- 不定位
+	  absolute - 相对于父标签定位（要求父标签的position的值不能是initial/static）
+	  relative - 相对自己定位（自己在标准流中的位置）
+	  fixed - 相对于浏览器定位
+	  sticky - 浏览器滚动相对浏览器定位，不滚动相对自己的标准流定位
+	  
+	6.盒子模型
+	   一个标签由四个部分组成：content、padding、border、margin
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			div{
+				font-weight: 500;
+				text-align: center;
+				background-color: darkgoldenrod;
+				/*height: 100px;*/
+				line-height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			1.font-weight  文字加粗
+				border（加粗）/bold（加粗）
+				100-400 ：一般
+				500：常规
+				600-900：加粗
+			2.font-style 文字样式
+			
+			3.文字对其方式
+			text-angin：
+			left
+			right
+			center
+			
+			注意：这个属性是针对标签中的内容（内容可以是文字，也可以是其他标签）
+			
+			4.行高
+			line-height
+			一个标签中只有一行内容的时候，可以通过设置内容行高和标签行高相同，让内容在标签垂直方向居中
+			
+			5.文字装饰器
+			text-decoration：
+			
+			6.text-indent  （首行缩进）
+			
+			7.字间距
+			letter-spacing
+		-->
+		<div id="">
+			文字效果
+			<a href=""></a>
+			<a href=""></a>
+			<a href=""></a>
+			<a href=""></a>
+		</div>
+		
+		<!--
+			列表相关属性
+			 a.定义符号样式
+			 b.定义符号位置
+		-->
+		<style type="text/css">
+			ul{
+				list-style-type: circle;
+				list-style-image: url(img/weixin.png);
+				
+				list-style-position: outside;
+			}
+		</style>
+		<ul>
+			<li>数</li>
+			<li>理</li>
+			<li>化</li>
+		</ul>
+		
+		
+		
+	</body>
+</html>

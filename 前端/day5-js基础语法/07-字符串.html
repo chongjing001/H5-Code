@@ -1,0 +1,71 @@
+<script type="text/javascript">
+	/*
+	 1.字符串字面量
+	 a.使用双引号或者单引号括起来的字符集
+	 b.除了普通字符以外还可以是转义字符：\n, \t, \\, 等等
+	 c.\u四位十六进制值对应的Unicode编码，   例：\u4e00 - 一
+	 
+	 2.获取字符
+	 字符串[下标] - 获取单个字符
+	 下标 - 范围是 0~长度-1；下标越界不会报错，取到的值是underfind
+	 js没有切片语法
+	 
+	 3.相关运算：+
+	 NaN - js中一个特殊的值，类似underfind、null，用来表示一个不存在的数值
+	 字符串+数据 ：支持字符串和其他任何数据相加，是将其他数据转换成字符串，然后拼接在一起
+	 
+	 js中数据类型转换
+	 类型名(数据)
+	 
+	 4.字符串长度
+	 数据.length
+	 
+	 5.给指定类型的对象添加属性和方法  
+	 
+	 6.js中的数组
+	    a.怎么获取数组中的元素
+	    b.数组对应的方法
+	    c.元素可以是任何类型
+	 
+	 
+	 
+	 
+	 * */
+	
+	arr1 = 'hello js'
+	console.log(arr1[1])
+	console.log(arr1[100])
+	console.log(arr1[-1])
+	
+	console.log('abc'+'123')
+	
+	console.log('hello js'.length)
+	
+	
+	
+	console.log('**************************')
+	
+	function Add(){
+        var arr = 0;
+        for(var i=0;i<arguments.length;i++){
+            if(isNaN(arguments[i]))continue;
+            arr+=parseInt(arguments[i]);
+        }
+        
+        console.log(parseInt(arguments[i]));
+        console.log(arr);
+        return arr;
+    }
+Add(454,5454,45,4,54,5,54,4,4,4)
+	
+	
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

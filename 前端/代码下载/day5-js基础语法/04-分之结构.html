@@ -1,0 +1,112 @@
+<script type="text/javascript">
+	//js中的分之结构有两种：if和switch
+	/*
+	 * 1.if语句
+	 * a.if
+	 * if(条件语句){
+	 * 	  满足条件会执行的代码
+	 * }
+	 * b.if-else
+	 * if(条件语句){
+	 * 		代码段1
+	 * }else{
+	 * 		代码段2
+	 * }
+	 * c. if - else if - else
+	 * if(条件语句){
+	 * 		代码段1
+	 * }else if(条件语句2){
+	 * 		代码段2
+	 * }else if(条件语句3){
+	 * 		代码段3
+	 * }else{
+	 * 		代码段4
+	 * }
+	 * 执行过程和python一模一样
+	 */
+	num = 11
+	if(num % 2){
+		console.log('奇数')
+	}else{
+		console.log('偶数')
+	}
+	
+	age = 80
+	if(age < 18){
+		console.log('未成年')
+	}else if(age < 60){
+		console.log('成年')
+	}else{
+		console.log('老年')
+	}
+	
+	/*
+	 * 2.switch语句
+	 * a.结构：
+	 * switch(表达式){
+	 * 	case 值1:
+	 * 		代码段1
+	 *  case 值2：
+	 * 		代码段2
+	 *  ...
+	 * 	default:
+	 *      代码段3
+	 * }
+	 * b.执行过程:
+	 * 使用表达式的值依次和后面每个case后面的值进行比较，看是否相等。
+	 * 找到第一个和表达式的值相等的case,将这个case作为入口，依次执行后面所有的代码，
+	 * 直到执行完成或者遇到break为止。如果每个case的值都和表达式的值不相等，
+	 * 就执行default后面的代码
+	 * 
+	 * 注意：case后面必须是一个有结果的表达式
+	 */
+	a = 15
+	switch(a){
+		case 5:
+			console.log('表达式1')
+		case 6:
+			console.log('表达式2')
+		case 7:
+			console.log('表达式3')
+		case 10:
+			console.log('表达式4')
+		case 11: 
+			console.log('表达式5')
+			break
+		default:
+			console.log('表达式6')		
+	}
+	//练习：用一个变量保存10分制的成绩，根据成绩打印情况：0-5(不及格) 6(及格)，7-8(良好)，9-10(优秀)
+	score = 2
+	switch(score){
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+			console.log('不及格')
+			break
+		case 6:
+			console.log('及格')
+			break
+		case 7:
+		case 8:
+			console.log('良好')
+			break
+		default:
+			console.log('优秀')
+	}
+	
+	
+	
+</script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

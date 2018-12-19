@@ -1,0 +1,293 @@
+
+/*========通用=========*/
+*{
+	/*取消默认间距*/
+	margin:0 ;
+	padding: 0;
+	/*所有的标签的子标签相对于自己定位*/
+	position: relative;
+	/*取消所有a标签的下划线*/
+	text-decoration: none;
+}
+
+
+/*1.======网页顶部======*/
+#header{
+	height: 120px;
+	background-color: ;
+	
+}
+#header #top{
+	height: 80px;
+	background-color:;
+}
+
+#header #top #div1{
+	position: absolute;
+	left: 186px;
+	
+	/*垂直居中
+	 当前标签高度60px*/
+	top: 50%;
+	margin-top: -30px;
+	
+}
+#header #top #a1{
+	position: absolute;
+	right: 190px;
+	bottom: 10px;
+	
+	/*文字效果*/
+	font-size: 12px;
+	color: rgb(150,150,150);
+	/*背景图
+	 background：图片地址  是否平铺 x坐标  y坐标*/
+	padding-left: 23px;
+	background: url(../img/q-icon.png) no-repeat 0px center white;	
+}
+#header #top #a1 a{
+	color: rgb(150,150,150);
+}
+
+#header #top #a1:hover{
+	color: red;
+	text-decoration: underline;
+	
+}
+#header #top #a1 a:hover{
+	color: red;
+}
+
+#header #bottom{
+	height: 40px;
+	text-align: center;
+	/*文字垂直方向居中*/
+	line-height:40px ;
+	background-color: rgb(255,246,236);
+	
+}
+#header #bottom font{
+	margin-left: 20px;
+	
+	font-size: 13px;
+	color: rgb(150,150,150);
+}
+#header #bottom font a{
+	color: rgb(38,38,38);
+}
+#header #bottom font a:hover{
+	text-decoration: underline;
+}
+
+#header #bottom img{
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+	
+}
+
+
+/*2.======网页中间=======*/
+#content{
+	height: 470px;
+	background: url(../img/bg.png) no-repeat 186px center rgb(220,45,25);
+}
+#content #login_div{
+	width: 350px;
+	height: 400px;
+	background-color: white;
+	/*定位*/
+	position: absolute;
+	right: 150px;
+	top: 15px;
+}
+
+#content #login_div #div1{
+	height: 40px;
+	background-color: rgb(255,246,236);
+	
+	line-height: 40px;
+}
+#content #login_div #div1 p{
+	font-size: 12px;
+	text-align: center;
+}
+#content #login_div #div1 p img{
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+	
+}
+
+#content #login_div #div2{
+	height: 55px;
+	
+	color: rgba(220,220,220,0.6) ;
+	font-weight: 100;
+	font-size: 20px;
+}
+#content #login_div #div2 button{
+	width: 169px;
+	height: 100%;
+	border: 0;
+	background-color: white;
+	
+	color: rgb(83,83,83);
+	font-size: 18px;
+	font-weight: 600;
+}
+#content #login_div #div2 button:hover{
+	color: red;
+}
+#content #login_div #div2 button:focus{
+	/*去掉outline*/
+	outline: 0;
+	color: red;
+}
+
+#content #login_div #div3{
+	height: 255px;
+	/*background-color: aquamarine;*/
+	border-top:  1px solid rgba(220,220,220,0.6);
+	border-bottom:  1px solid rgba(220,220,220,0.6);
+}
+#content #login_div #div3 #username,#content #login_div #div3 #password{
+	height: 40px;
+	
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	width: auto;
+	top: 30px;
+	
+	/*background-color: orange;*/
+	border: 1px solid rgba(220,220,220,1);
+}
+ #content #login_div #div3 #password{
+ 	top: 90px;
+ }
+ #content #login_div #div3 img{
+ 	width: 40px;
+ 	height: 40px;
+ 	float: left;
+ 	
+ 	border-right: 1px solid rgba(220,220,220,1);
+ }
+ #content #login_div #div3 input{
+ 	border: 0;
+ 	height: 40px;
+ 	width: 250px;
+ 	float: left;
+ 	/*移动光标*/
+ 	padding-left: 10px;
+	font-size: 14px;
+ }
+ #content #login_div #div3 input:focus{
+ 	outline: 0;
+ } 
+ 
+ #content #login_div #div3 a{
+  	position: absolute;
+  	right: 20px;
+  	top: 150px;
+  	font-size: 13px;
+  	color: rgb(85,85,85);
+ }
+ #content #login_div #div3 a:hover{
+   	text-decoration: underline;
+   	color: red;
+ }
+ #content #login_div #div3 button{
+ 	position: absolute;
+ 	bottom: 30px;
+ 	left: 20px;
+ 	width: 310px;
+ 	height: 35px;
+ 	border: 0;
+ 	color: white;
+ 	font-size: 20px;
+ 	font-weight: 500px;
+ 	background-color:rgb(210,35,20) ;
+ }
+ #content #login_div #div3 button:hover{
+  	outline: 0;
+ }
+ #content #login_div #div3 button:active{
+  	/*text-decoration: underline;*/
+  	border: 2px solid deepskyblue;
+  	border-radius: 3px;
+ }
+ /*第三方登陆和注册*/
+#content #login_div #div4{
+	height: 50px;
+	line-height: 50px;
+	font-size:15px ;
+	color: rgba(220,220,220,0.6);
+}
+#content #login_div #div4 #a1{
+	margin-left: 20px;
+	margin-right: 20px;
+	
+	background: url(../img/qq.png) no-repeat 0px center  rgba(0,0,0,0);
+	padding-left: 26px;
+	color: rgb(40,42,49);
+	
+}
+#content #login_div #div4 #a2{
+	margin-left: 20px;
+	background: url(../img/weixin.png) no-repeat 0px center  rgba(0,0,0,0);
+	padding-left: 26px;
+	color: rgb(40,42,49);
+	
+}
+
+#content #login_div #div4 #a3{
+	position: absolute;
+	right: 20px;
+	background: url(../img/right.png) no-repeat 0px center  rgba(0,0,0,0);
+	padding-left: 26px;
+	color: rgb(40,42,49);
+	
+}
+#content #login_div #div4 #a1:hover{
+	text-decoration: underline;
+	color: rgb(210,35,50);
+}
+#content #login_div #div4 #a2:hover{
+	text-decoration: underline;
+	color: rgb(210,35,50);
+}
+#content #login_div #div4 #a3:hover{
+	text-decoration: underline;
+	color: rgb(210,35,50);
+}
+
+
+/*3.=======网页底部=======*/
+#footer{
+	height: 110px;
+	/*background-color: lavender;*/
+}
+#footer #footer-top{
+	height: 60px;
+	line-height: 60px;
+	font-size:13px ;
+	
+	/*background-color: #00BFFF;*/
+	text-align: center;
+}
+
+#footer #footer-top a{
+	color: rgb(38,38,38,38);
+}
+#footer #footer-top a:hover{
+	color: red;
+	text-decoration: underline;
+}
+
+#footer #footer-down{
+	height: 50px;
+	line-height: 50px;
+	font-size:13px ;
+	text-align: center;
+}

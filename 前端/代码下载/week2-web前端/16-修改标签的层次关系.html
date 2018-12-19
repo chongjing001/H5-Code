@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+			}
+			#div1{
+				background-color: lightpink;
+				position: absolute;
+				top: 100px;
+				left: 100px;
+				/*默认都是0，这个值大的在上面，小的在下面*/
+				/*z-index: 1;*/  
+			}
+			#div2{
+				background-color: lightgreen;
+				position: absolute;
+				top: 150px;
+				left: 150px;
+				/*z-index: 2;*/
+				
+			}
+			#div3{
+				background-color: cornflowerblue;
+				position: absolute;
+				top: 20px;
+				left: 200px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<div id="div2"></div>
+		<div id="div3"></div>
+		<script type="text/javascript">
+			var div1Node = document.getElementById('div1');
+			div1Node.style.left = '100px';
+			div1Node.style.top = '100px';
+			var div2Node = document.getElementById('div2');
+			div2Node.style.left = '150px';
+			div2Node.style.top = '150px';
+			var div3Node = document.getElementById('div3');
+			div3Node.style.left = '20px';
+			div3Node.style.top = '200px';
+			var divNodeArray = document.getElementsByTagName('div')
+			//保存最上层的标签的z-index的值
+			var maxZ = 0;
+			var offsetX1, offsetY1;
+			//修改层次(鼠标按下)
+			function clickAction(evt){
+				maxZ++;
+				this.style.zIndex = maxZ;
+				this.isDown = true;
+				offsetX1 = evt.offsetX;
+				offsetY1 = evt.offsetY;
+			}
+			
+			//移动事件驱动程序
+			function dragAction(evt){
+				//按住不放的时候移动
+				if(this.isDown){
+					var left = parseInt(this.style.left.slice(0,-2));
+					var top = parseInt(this.style.top.slice(0,-2));
+					this.style.left = (left+(evt.offsetX-offsetX1))+'px';
+					this.style.top = (top+(evt.offsetY-offsetY1))+'px';
+					
+				}
+			}
+			//绑定事件
+			for(x in divNodeArray){
+				var divNode = divNodeArray[x];
+				//绑定按下事件
+				divNode.onmousedown = clickAction;
+				divNode.onmousemove = dragAction;
+				divNode.onmouseup = function(){
+					this.isDown = false;
+				}
+				divNode.onmouseleave = function(){
+					this.isDown = false;
+				}
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

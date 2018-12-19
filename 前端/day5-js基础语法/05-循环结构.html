@@ -1,0 +1,89 @@
+<script type="text/javascript">
+	/*
+	 * js中for循环和while循环两种
+	 * 1.for循环
+	 * a. for-in
+	 *  结构：
+	 * for (变量 in 序列){
+	 * 	       循环体
+	 * }
+	 * 执行过程和python一样，但是变量取到的不是元素而是下标 或者key（属性名）
+	 * 
+	 * 序列 - 字符串、数组、对象
+	 * 
+	 * b.  c的for循环
+	 * 结构：
+	 * for(表达式1；表达式2；表达式3...){
+	 * 	      循环体
+	 * }
+	 * 执行过程：
+	 * 先执行表达式1；判断表达式2的值是否为true，如果为true就执行循环体，执行完循环体在执行表达式3，
+	 *                          然后判断表达式2的值是否为true，如果为true就执行循环体，执行完循环体在执行表达式3
+	 * 							... 直到表达式2的值是false
+	 * 
+	 * 
+	 * 2.while 循环
+	 * a.while循环
+	 * while(条件语句){
+	 * 	            循环体
+	 * }
+	 * 执行过程和python一模一样
+	 * 
+	 * 
+	 * b.do-while循环
+	 * do{
+	 * 	       循环体
+	 * }while(条件语句)
+	 * 
+	 * 区别：do-while的循环体至少会执行一次
+	 * 
+	 * 
+	 */
+	for(i in 'abcde'){
+		console.log(i)
+	}
+	console.log('=================')
+	arr1 = [45,'ac',true,'你好']
+	for(i in arr1){
+		console.log(i)
+	}
+	console.log('=================')
+	person1 = {name:'小李',age:20,gender:'boy'}
+	for(i in person1){
+		console.log(i, typeof(i))
+		console.log(person1[i])
+	}
+	
+
+	
+	
+	
+	for (num=1,sum1 = 0;num<=100; num++) {
+		sum1 += num
+		
+	}
+	console.log(sum1)
+	
+	
+	sum1 = 0
+	num = 1
+	do{
+		sum1 += num
+		num++
+	}while (num<=100){
+	console.log(sum1)
+		
+		
+	}
+	
+</script>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

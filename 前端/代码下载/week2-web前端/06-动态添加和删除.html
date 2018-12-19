@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			#top{
+				margin-left: 60px;
+				margin-top: 60px;
+			}
+			#top div{
+				width: 200px;
+				height: 50px;
+				color: white;
+				font-size: 20px;
+				margin-bottom: 2px;
+				text-align: center;
+				line-height: 50px;
+			}
+			#top div font{
+				position: absolute;
+				right: 3px;
+				/*将光标变成手*/
+				cursor: pointer;
+			}
+			
+			#bottom{
+				margin-left: 60px;
+			}
+			#bottom #text{
+				display: inline-block;
+				width: 200px;
+				height: 50px;
+				border: none;
+				outline: none;
+				/*让光标在中间*/
+				text-align: center;
+				border-bottom: 2px solid lightgrey;
+				font-size: 16px;
+			}
+			#bottom #button{
+				display: inline-block;
+				width: 100px;
+				height: 30px;
+				border: none;
+				outline: none;
+				background-color: coral;
+				color: white;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="top">
+		</div>
+		<!--添加默认的水果标签-->
+		<script type="text/javascript">
+				var fruitArray = ['香蕉', '苹果', '草莓', '火龙果'];
+				for(index in fruitArray){
+					fruitName = fruitArray[index];
+					creatFruitNode(fruitName, 'darkgreen')
+				}
+				//==========删除水果=============
+				function delFruit(){
+					//在这儿，点击的是哪个标签this就指向谁
+					this.parentElement.remove()
+					
+				}
+				//添加节点
+				function creatFruitNode(fruitName, color1){
+					//创建标签
+					var fruitNode = document.createElement('div')
+					fruitNode.innerHTML = fruitName;
+					var fontNode = document.createElement('font');
+					fontNode.innerText = '×';
+					//给点击事件绑定驱动程序
+					fontNode.onclick = delFruit;
+					fruitNode.appendChild(fontNode);
+					//设置背景颜色
+					fruitNode.style.backgroundColor = color1
+					//添加标签
+					var topNode = document.getElementById('top')
+					topNode.appendChild(fruitNode)
+				}
+			</script>
+			
+		<div id="bottom">
+			<input type="text" name="" id="text" value="" />
+			<input type="button" name="" id="button" value="确定" onclick="addFruit()"/>
+		</div>
+		<script type="text/javascript">
+			//=========产生随机颜色=============
+			function randomColor(){
+				var num1 = parseInt(Math.random()*255);
+				var num2 = parseInt(Math.random()*255);
+				var num3 = parseInt(Math.random()*255);
+				return 'rgb('+num1+','+num2+','+num3+')';
+			}
+			
+			//==========添加水果==============
+			function addFruit(){
+				//获取输入框中的内容
+				var inputNode = document.getElementById('text');
+				var addName = inputNode.value;
+				if(addName.length == 0){
+					alert('输入的内容为空！');
+					return;
+				}
+				//清空输入框中的内容
+				inputNode.value = '';
+				//创建标签
+				var fruitNode = document.createElement('div');
+				fruitNode.innerHTML = addName;
+				var fontNode = document.createElement('font');
+				fontNode.innerText = '×';
+				//给点击事件绑定驱动程序
+				fontNode.onclick = delFruit;
+				fruitNode.appendChild(fontNode);
+				//创建随机颜色
+				//'rgb(255, 0, 0)'
+				fruitNode.style.backgroundColor = randomColor();
+				var topNode = document.getElementById('top');
+				topNode.insertBefore(fruitNode, topNode.firstChild);
+				
+			}
+		</script>
+		
+		
+	</body>
+</html>

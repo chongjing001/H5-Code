@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 400px;
+				height: 400px;
+				margin: auto;
+				background-color: hotpink;
+			}
+			#box2{
+				width: 300px;
+				height: 300px;
+				margin: auto;
+				background-color: yellowgreen;
+			}
+			#box3{
+				width: 150px;
+				height: 150px;
+				margin: auto;
+				background-color: lightgrey;
+			}
+			
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				//获取节点
+				var box1Node = document.getElementById('box1')
+				var box2Node = document.getElementById('box2')
+				var box3Node = document.getElementById('box3')
+				//绑定事件
+				//1.事件冒泡：在子标签上产生的事件会传递给父标签
+				box1Node.onclick = function(evt){
+//					console.log()
+					alert('box1被点击')
+					
+				}
+				box2Node.onclick = function(evt){
+//					console.log('box2被点击')
+					alert('box2被点击')
+					evt.stopPropagation()
+				}
+				box3Node.onclick = function(evt){
+//					console.log('box3被点击')
+					alert('box3被点击')
+					
+					//2.捕获事件 - 阻止事件从子标签传递给父标签
+					evt.stopPropagation()
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="box2">
+				<div id="box3">
+					
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			colspan - 列合并
+			rowspan - 行合并
+		-->
+		<table width="1000" height="500" border="1" cellspacing="0">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<!--当前单元格是由3列合并成的1列-->
+				<td colspan="3"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<!--当前单元格是由2行合并成的1行-->
+				<td rowspan="2"></td>
+				<!--当前单元格是由2行合并成的1行；3列合并成的1列-->
+				<td rowspan="2" colspan="3"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>			
+		</table>
+		<br />
+		
+		<table width="1000" height="500" border="1" cellspacing="0">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td rowspan="2"></td>
+				<td></td>
+				<td colspan="2"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="3"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td colspan="2"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td colspan="2"></td>
+				<td></td>
+			</tr>
+		</table>
+		
+	</body>
+</html>

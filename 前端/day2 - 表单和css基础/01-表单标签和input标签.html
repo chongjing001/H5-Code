@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="icon" type="image/ico" href="img/aaa.ico"/>
+	</head>
+	<body>
+		<!--
+			1.表单标签（from）
+			表单标签的作用：收集用户信息 - 实质将表单标签作为容器，来收集表单标签
+			                             其他标签的信息，本身没有任何显示效果
+			 action属性：设置提交地址
+			 method属性：提交方式（post/get）
+			 点提交按钮的时候，将表单中所有相关标签以name=value的形式
+			 按照method属性提供的提交方式，提交给action属性对应的接口
+			 
+			 form标签属性提供两大功能：a.统一提交 b.重置
+		-->
+		<form action="" method="get">
+			<font>用户名：</font><input type="text" name="用户名" id="" value="abc" placeholder="请输入用户名..." maxlength="8" />
+			<br /><br />
+			<font>密码：&emsp;</font><input type="password"  name="密码" value="" placeholder="请输入密码..." maxlength="12" align="center"/>
+			<br /><br />
+			<font>男</font><input type="radio" name="gender" id="" value="man" checked="checked"/>
+			<font>女</font><input type="radio" name="gender" id="" value="woman" /><br />
+			<br />
+			<!--
+				submit - 提交按钮
+				点击按钮后会自动提交from中所有设置了name属性的相关标签的值
+				以“name=value”的形式进行提交
+			-->
+			<input type="submit" name="" id="" value="登录" /><br />
+			<!--
+				checkbox - 复选按钮
+			-->
+			<font>兴趣爱好：</font><br />
+			<input type="checkbox" name="hobby" id="" value="" /><font>读书</font>
+			<input type="checkbox" name="hobby" id="" value="" /><font>看报</font>
+			<input type="checkbox" name="hobby" id="" value="" /><font>看电影</font><br />
+			<input type="checkbox" name="hobby" id="" value="" /><font>上网</font>
+			<input type="checkbox" name="hobby" id="" value="" /><font>打游戏</font>
+			<input type="checkbox" name="hobby" id="" value="" /><font>旅游</font>
+			<br />
+			<input type="button" name="" id="" value="注册" />
+			<!--
+				reset - 重置标签
+				将当前from标签中所有的标签状态设置为初始状态
+			-->
+			<input type="reset" name="" id="" value="重置" />
+		</form>
+		<!--
+			button - 普通按钮
+			value属性 - 决定按钮上显示的文字
+		-->
+		<!--
+			2.input标签
+			既可以放在form标签中，也可以不放在form标签中单独使用
+			
+			type属性 - type对应的值不一样，input标签体现的功能不一样
+			
+			a.text - 文本输入框
+			    password - 密码输入框
+			    radio - 单选按钮
+			                name属性 - 要求同一组数据的name属性值必须一样，才能单选
+							value属性 - 不可见的，专门用于数据的提交；或者区分被选中的值
+							checked属性 - 让单选按钮出于选中状态
+			
+			name属性 - 专门用来区分不同的信息，相当于字典的key
+			value属性 - 标签内容；只想输入框中的内容
+			placeholder属性 - 当输入框中没有内容的时候，显示的提示信息
+			
+		-->
+		
+		<!--
+			3.按钮标签（button）
+			双标签，中间内容更灵活
+		-->
+		<!--文字按钮-->
+		<button>点我</button><br />
+		<!--图片按钮-->
+		<button>
+			<img src="img/56504cd869401b0a1132b80c_看图王.jpg"/>
+			<p>登录</p>
+		</button>
+		
+		
+		
+		<!--test-->
+		<br />
+		<input type="color" name="" id="" value="" />
+		<br />
+		<input type="data" name="" id="" value="" />
+		
+		<input type="datetime" name="" id="" value="" />
+		<input type="datetime-local" name="" id="" value="" />
+		
+		<input type="email" name="" id="" value="" />
+		<input type="image" name="" id="" value="" />
+		
+		
+	</body>
+</html>

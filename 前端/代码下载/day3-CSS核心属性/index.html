@@ -1,0 +1,78 @@
+<!--
+	标签
+	1.表单标签（form）- 提交(name=value)、重置
+	2.input标签 - 单标签
+	type - text(普通文本输入框)、password(密码输入框)、radio(单选按钮)、checkbox(复选按钮)、button、
+	       submit(提交)、reset(重置)
+	name - 提交、区分
+	value - 内容
+	placeholder - 占位符
+	maxlength - 最大输入的字符个数
+	checked - 默认选中
+	disabled - 禁用(输入框禁用就不能输入，按钮禁用就不能点击)
+	
+	3.下拉菜单标签（select-option-optgroup）
+	4.textarea
+	双标签中的内容相当于value
+	
+	4.div,span
+	
+	CSS基础
+	1.基本语法
+	选择器{属性名1:属性值;属性名2:属性值;}
+	
+	选择器 - 决定样式表是作用于哪个标签的
+	
+	2.写在哪儿？
+	内联样式表
+	内部样式表
+	外部样式表
+	
+	3.选择器 - 选中不同的标签
+	标签选择器、id选择器、class选择器、群组选择器、后代选择器、通配符(*)
+	
+	4.伪类选择器 - 选中不同的状态
+	link 
+	visited
+	hover
+	acitive
+	
+	a:link
+	p:hover
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			textarea{
+				color: salmon;
+				background-color: yellowgreen;
+				font-size: 40px;
+			}
+			
+			div #a1:hover{
+				color: red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<a href="" id="a2">java</a>
+		<a href="" id="a1">python</a>
+		<div id="">
+			<a href="" id="a1">百度</a>
+		</div>
+		<textarea name="" rows="4" cols="20">123</textarea>
+		<textarea name="" rows="" cols=""></textarea>
+		<select name="" style="color: seagreen;">
+			<optgroup></optgroup>
+			<option value=""></option>
+		</select>
+		<input type="button" name="" id="" value="按钮" disabled="disabled"/>
+		<input disabled="disabled" checked="" type="" name="" id="" value=""  placeholder="" maxlength=""/>
+	</body>
+</html>
